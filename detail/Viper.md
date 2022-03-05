@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-JS/Python-blue)
 ![Author](https://img.shields.io/badge/Author-FunnyWolf-orange)
 ![GitHub stars](https://img.shields.io/github/stars/FunnyWolf/Viper.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.5-red)
+![Version](https://img.shields.io/badge/Version-V1.5.16-red)
 ![Time](https://img.shields.io/badge/Join-20210323-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -78,51 +78,67 @@
 
 ## 最近更新
 
-#### [v1.5.6] - 2021-10-31
-**新功能**  
-- 新增监听防火墙功能  
-- 新增直接windows系统调用规避技术模块  
-**优化**  
-- reverse_http(s)在网络断开时超时时间从21秒(Windows默认)更新为3秒  
-- 当前Session默认用不过期,不会自动退出  
-- 合并metasploit-framework 6.1.13版本  
-**Bugfix**  
-- 修复sessionExpirationTimeout为0时reverse_tcp无法连接问题  
-- 修复UI界面无法获取默认lhost参数问题
+#### [v1.5.16] - 2022-02-26
 
-#### [v1.5.5] - 2021-10-24
-**新功能**  
-- 新增`CVE-2021-40449提权`模块  
-- 新增WebUI一键下载Viper所有日志  
 **优化**  
-- 合并metasploit-framework 6.1.12版本  
-**Bugfix**  
-- 修复Socks代理关闭后端口占用问题
+- 优化部分UI,适配Macox  
+- 合并metasploit-framework 6.1.32版本  
 
-#### [v1.5.4] - 2021-10-17
-**新功能**  
-- 新增MS17-010利用(CSharp)模块  
-**优化**  
-- 合并metasploit-framework 6.1.11版本  
 **Bugfix**  
-- 修复重复添加reverse_http(s)监听时无法上线Session问题
+- 修复伪造成Word文档的exe文件某些情境下无法清理exe问题  
+- 修复Python,Java,Android类型Payload无法上线问题
 
-#### [v1.5.3] - 2021-10-10
-**优化**  
-- 登录页面多语言支持
-  - 优化 msfconsole 用户体验  
-- 合并metasploit-framework 6.1.10版本
+#### [v1.5.15] - 2022-02-13
 
-#### [v1.5.1] - 2021-09-26
-**新功能**  
-- 新增`获取互联网出口IP`模块  
-- session进程列表新增搜索过滤  
 **优化**  
-- 杀毒软件显示支持英文版  
-- 优化内网扫描模块输出格式  
-- 优化`运行模块`功能的性能及UI  
-- 合并metasploit-framework 6.1.8版本  
+- 优化部分UI布局  
+- 删除Session增加二次确认  
+- 通信通道适配大部分Payload  
+- 合并metasploit-framework 6.1.30版本  
+
 **Bugfix**  
-- 修复不显示杀毒软件名称问题
+- 修复手机摄像头拍照MIUI崩溃问题
+
+#### [v1.5.14] - 2022-02-06
+
+**新功能**  
+- 新增三个Android教学演示模块(获取目标手机短信/通话记录/通讯录)(手机摄像头拍照)(手机录制音频)  
+- 新增通信通道功能,多级内网渗透更加便捷 readme  
+
+**优化**  
+- 合并metasploit-framework 6.1.29版本
+
+#### [v1.5.13] - 2022-01-11
+
+**新功能**  
+- 新增Zoomeye API接口
+- 新增DNSLog服务器模块
+
+**优化**  
+- 删除全网扫描debug接口(手工导入功能可完全代替此接口)
+- Log4j Payload回显Java version,OS arch,OS version
+- 优化全网扫描流水线逻辑,当前不会影响心跳数据传输
+- 合并metasploit-framework 6.1.25版本
+
+**Bugfix**  
+- 修复VMware Horizon Log4j Rce超时参数不生效问题
+
+#### [v1.5.10] - 2021-12-16
+
+**新功能**  
+- 新增Log4j被动扫描功能  
+- VIPER+crawlergo组合使用可实现全自动主动扫描Log4j漏洞  
+
+**Log4j被动扫描**  
+- 自动替换GET请求参数为Payload  
+- 自动替换POST请求参数为Payload  
+- 自动替换POST请求JSON中值为Payload  
+- 自动替换跳过密码字段  
+- 自动在headers中添加Payload(依据字典轮询)  
+- Payload包含原始Payload与绕过WAF的Payload  
+- Payload中包含UUID,可根据DNSLOG记录查找具体触发漏洞的请求内容  
+
+**Log4j自动化主动扫描**  
+- 通过chrome headless + 爬虫的方式获取自动获取页面所有请求,将请求导入到被动proxy中,实现自动化扫描
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->
