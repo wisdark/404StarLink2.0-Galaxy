@@ -1,11 +1,32 @@
 ## 其他 / others
 
-1. [passive-scan-client](#passive-scan-client)
+1. [BinAbsInspector](#binabsinspector)
 2. [f8x](#f8x)
-3. [wam](#wam)
-4. [LBot](#lbot)
+3. [passive-scan-client](#passive-scan-client)
+4. [wam](#wam)
+5. [LBot](#lbot)
 
 ----------------------------------------
+
+### [BinAbsInspector](detail/BinAbsInspector.md)
+![Author](https://img.shields.io/badge/Author-KeenSecurityLab-orange)
+![Language](https://img.shields.io/badge/Language-Java-blue)
+![GitHub stars](https://img.shields.io/github/stars/KeenSecurityLab/BinAbsInspector.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.1-red)
+
+<https://github.com/KeenSecurityLab/BinAbsInspector>
+
+BinAbsInspector(Binary Abstract Inspector)是一款用于自动化逆向工程和扫描二进制文件漏洞的静态分析器，是 Keenlab 孵化的长期研究项目。基于 Ghidra 的支持下的抽象解释，适用于 Ghidra 的 Pcode 而非汇编。目前支持 x86、x64、armv7 和 aarch64 的二进制文件。
+
+### [f8x](detail/f8x.md)
+![Author](https://img.shields.io/badge/Author-ffffffff0x-orange)
+![Language](https://img.shields.io/badge/Language-Bash-blue)
+![GitHub stars](https://img.shields.io/github/stars/ffffffff0x/f8x.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.6.2-red)
+
+<https://github.com/ffffffff0x/f8x>
+
+一款红/蓝队环境自动化部署工具,支持多种场景,渗透,开发,代理环境,服务可选项等。
 
 ### [passive-scan-client](detail/passive-scan-client.md)
 ![Author](https://img.shields.io/badge/Author-c0ny1-orange)
@@ -16,16 +37,6 @@
 <https://github.com/c0ny1/passive-scan-client>
 
 Passive Scan Client是一款可以将经过筛选的流量转发到指定代理的Burp被动扫描流量转发插件
-
-### [f8x](detail/f8x.md)
-![Author](https://img.shields.io/badge/Author-ffffffff0x-orange)
-![Language](https://img.shields.io/badge/Language-Bash-blue)
-![GitHub stars](https://img.shields.io/github/stars/ffffffff0x/f8x.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.9-red)
-
-<https://github.com/ffffffff0x/f8x>
-
-一款红/蓝队环境自动化部署工具,支持多种场景,渗透,开发,代理环境,服务可选项等。
 
 ### [wam](detail/wam.md)
 ![Author](https://img.shields.io/badge/Author-knownsec404-orange)

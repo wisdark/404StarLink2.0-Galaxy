@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![Author](https://img.shields.io/badge/Author-LoRexxar-orange)
 ![GitHub stars](https://img.shields.io/github/stars/LoRexxar/Kunlun-M.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.6.4.1-red)
+![Version](https://img.shields.io/badge/Version-V2.6.5-red)
 ![Time](https://img.shields.io/badge/Join-20200821-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -305,7 +305,21 @@ rules/{语言类型}/CVI_xxxx.py
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
 
+- 2022-08-23 发布演示视频[404星链计划开源安全工具演示——KunLun-M](https://www.bilibili.com/video/BV15a411G7CT)
 
 ## 最近更新
+
+#### [v2.6.5] - 2022-06-23
+
+**更新**  
+- 更新了社区化的部署方案，支持使用公开的Server端查看扫描结果，为后续延展提供基础  
+- 更新了潮汐平台链接，可以使用潮汐平台快速部署体验
+
+#### [v2.6.4.2] - 2022-03-02
+
+**修复**  
+- 修复了几个PHP的语法支持问题  
+- 修复了组件扫描中关于pom.xml静态扫描的几个语法解析错误  
+- 修改了组件数据储存格式
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

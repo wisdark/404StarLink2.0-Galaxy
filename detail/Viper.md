@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-JS/Python-blue)
 ![Author](https://img.shields.io/badge/Author-FunnyWolf-orange)
 ![GitHub stars](https://img.shields.io/github/stars/FunnyWolf/Viper.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.16-red)
+![Version](https://img.shields.io/badge/Version-V1.5.24-red)
 ![Time](https://img.shields.io/badge/Join-20210323-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -78,67 +78,59 @@
 
 ## 最近更新
 
-#### [v1.5.16] - 2022-02-26
-
-**优化**  
-- 优化部分UI,适配Macox  
-- 合并metasploit-framework 6.1.32版本  
-
-**Bugfix**  
-- 修复伪造成Word文档的exe文件某些情境下无法清理exe问题  
-- 修复Python,Java,Android类型Payload无法上线问题
-
-#### [v1.5.15] - 2022-02-13
-
-**优化**  
-- 优化部分UI布局  
-- 删除Session增加二次确认  
-- 通信通道适配大部分Payload  
-- 合并metasploit-framework 6.1.30版本  
-
-**Bugfix**  
-- 修复手机摄像头拍照MIUI崩溃问题
-
-#### [v1.5.14] - 2022-02-06
+#### [v1.5.24] - 2022-09-11
 
 **新功能**  
-- 新增三个Android教学演示模块(获取目标手机短信/通话记录/通讯录)(手机摄像头拍照)(手机录制音频)  
-- 新增通信通道功能,多级内网渗透更加便捷 readme  
+- 新增UI提示框获取用户输入的密码模块  
 
 **优化**  
-- 合并metasploit-framework 6.1.29版本
+- mitmproxy开放公网访问,添加http代理认证  
+- msfrpc web组件由puma替换为thin,减少cpu占用  
+- msfrpc默认开启cpulimit 50%  
+- msfrpc使用OJ为默认json组件,替换yajl  
+- 更新Django 4.0  
+- 合并metasploit-framework 6.2.18版本
 
-#### [v1.5.13] - 2022-01-11
-
-**新功能**  
-- 新增Zoomeye API接口
-- 新增DNSLog服务器模块
+#### [v1.5.23] - 2022-08-07
 
 **优化**  
-- 删除全网扫描debug接口(手工导入功能可完全代替此接口)
-- Log4j Payload回显Java version,OS arch,OS version
-- 优化全网扫描流水线逻辑,当前不会影响心跳数据传输
-- 合并metasploit-framework 6.1.25版本
+- 合并 metasploit-framework 6.2.12版本  
 
 **Bugfix**  
-- 修复VMware Horizon Log4j Rce超时参数不生效问题
+- 修复yajl-ruby bug导致的渗透服务无响应问题  
+- 修复msf cpu占用100%问题  
+- 修复内存占用过高问题
 
-#### [v1.5.10] - 2021-12-16
+#### [v1.5.21] - 2022-05-21
 
-**新功能**  
-- 新增Log4j被动扫描功能  
-- VIPER+crawlergo组合使用可实现全自动主动扫描Log4j漏洞  
+**优化**  
+- 更新内网代理提示  
+- 优化被动扫描模块加载逻辑,提高性能  
+- 合并metasploit-framework 6.1.44版本  
 
-**Log4j被动扫描**  
-- 自动替换GET请求参数为Payload  
-- 自动替换POST请求参数为Payload  
-- 自动替换POST请求JSON中值为Payload  
-- 自动替换跳过密码字段  
-- 自动在headers中添加Payload(依据字典轮询)  
-- Payload包含原始Payload与绕过WAF的Payload  
-- Payload中包含UUID,可根据DNSLOG记录查找具体触发漏洞的请求内容  
+**Bugfix**  
+- FOFA报错问题issues#87
 
-**Log4j自动化主动扫描**  
-- 通过chrome headless + 爬虫的方式获取自动获取页面所有请求,将请求导入到被动proxy中,实现自动化扫描
+#### [v1.5.19] - 2022-03-28
+
+**优化**  
+- Session文件管理增加缓存,优化首次打开速度  
+- 合并metasploit-framework 6.1.36版本  
+
+**Bugfix**  
+- 修复无法使用migrate命令问题  
+- 修复无法创建虚拟监听问题  
+- 修复Windows UAC绕过运行报错问题
+
+#### [v1.5.18] - 2022-03-11
+
+**优化**  
+- Viper重启后不再自动加载历史监听,而是生成对应的虚拟监听并加入备份标签,便于用户手动恢复  
+- 调用jemalloc编译ruby解释器,优化MSF内存占用  
+- 合并metasploit-framework 6.1.34版本  
+
+**Bugfix**  
+- 修复reverse_https监听关闭后端口占用问题  
+- to_handler生成的监听当前在WEBUI正确显示
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

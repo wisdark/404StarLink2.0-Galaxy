@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![Author](https://img.shields.io/badge/Author-w8ay-orange)
 ![GitHub stars](https://img.shields.io/github/stars/boy-hack/ksubdomain.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.1-red)
+![Version](https://img.shields.io/badge/Version-V1.9.5-red)
 ![Time](https://img.shields.io/badge/Join-20200821-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -156,6 +156,26 @@ ksubdomain只需要1分半，速度远远比massdns、dnsx快~
 - 2019-10-12 发布文章[《从 Masscan, Zmap 源码分析到开发实践》](https://paper.seebug.org/1052/)
 
 ## 最近更新
+
+#### [v1.9.5] - 2022-03-31
+
+**更新**  
+- 增加suffix domain指定特定dns的提示  
+- 修复verify模式计算域名总量错误
+
+#### [v1.9.3] - 2022-03-24
+
+**更新**  
+- 增加编程接口，ksubdomain可作为一个库封装  
+- enum模式加入--ns参数，用于添加特定dns  
+- 修复域名太多时扫描卡住的问题  
+
+
+#### [v1.8.5] - 2022-03-06
+
+**优化**  
+- 修复高并发下出现的一处内存拷贝问题  
+- 优化泛解析时的错误处理
 
 #### [v1.8.1] - 2022-02-13
 

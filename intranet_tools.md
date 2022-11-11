@@ -15,7 +15,7 @@
 ![Author](https://img.shields.io/badge/Author-shadow1ng-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/shadow1ng/fscan.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.6.3-red)
+![Version](https://img.shields.io/badge/Version-V1.8.1-red)
 
 <https://github.com/shadow1ng/fscan>
 
@@ -35,7 +35,7 @@
 ![Author](https://img.shields.io/badge/Author-ph4ntonn-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/ph4ntonn/Stowaway.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.0.0-red)
+![Version](https://img.shields.io/badge/Version-V2.1-red)
 
 <https://github.com/ph4ntonn/Stowaway>
 

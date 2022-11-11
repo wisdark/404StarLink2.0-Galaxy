@@ -3,10 +3,9 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![Author](https://img.shields.io/badge/Author-knownsec404-orange)
 ![GitHub stars](https://img.shields.io/github/stars/knownsec/pocsuite3.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.9-red)
+![Version](https://img.shields.io/badge/Version-V2.0.0-red)
 ![Time](https://img.shields.io/badge/Join-20200821-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
-
 
 ## Legal Disclaimer
 Usage of pocsuite3 for attacking targets without prior mutual consent is illegal.
@@ -29,15 +28,12 @@ It comes with a powerful proof-of-concept engine, many nice features for the ult
 * Results can be easily exported
 * Dynamic patch and hook requests 
 * Both command line tool and python package import to use
-* IPV6 support
+* IPv6 support
 * Global HTTP/HTTPS/SOCKS proxy support
 * Simple spider API for PoC script to use
 * Integrate with [Seebug](https://www.seebug.org) (for load PoC from Seebug website)
-* Integrate with [ZoomEye](https://www.zoomeye.org) (for load target from ZoomEye `Dork`)
-* Integrate with [Shodan](https://www.shodan.io) (for load target from Shodan `Dork`)
-* Integrate with [Ceye](http://ceye.io/) (for verify blind DNS and HTTP request)
-* Integrate with [Interactsh](https://github.com/projectdiscovery/interactsh) (for verify blind DNS and HTTP request)
-* Integrate with Fofa (for load target from Fofa `Dork`)
+* Integrate with [ZoomEye](https://www.zoomeye.org), [Shodan](https://www.shodan.io), etc.  (for load target use `Dork`)
+* Integrate with [Ceye](http://ceye.io/), [Interactsh](https://github.com/projectdiscovery/interactsh) (for verify blind DNS and HTTP request)
 * Friendly debug PoC scripts with IDEs
 * More ...
 
@@ -60,7 +56,7 @@ It comes with a powerful proof-of-concept engine, many nice features for the ult
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.7+
 - Works on Linux, Windows, Mac OSX, BSD, etc.
 
 ## Installation
@@ -91,6 +87,12 @@ sudo apt update
 sudo apt install pocsuite3
 ```
 
+### Docker
+
+```
+docker run -it pocsuite3/pocsuite3
+```
+
 ### ArchLinux
 
 ``` bash
@@ -102,11 +104,11 @@ yay pocsuite3
 Or click [here](https://github.com/knownsec/pocsuite3/archive/master.zip) to download the latest source zip package and extract
 
 ``` bash
-$ wget https://github.com/knownsec/pocsuite3/archive/master.zip
-$ unzip master.zip
-$ cd pocsuite3-master
-$ pip3 install -r requirements.txt
-$ python3 setup.py install
+wget https://github.com/knownsec/pocsuite3/archive/master.zip
+unzip master.zip
+cd pocsuite3-master
+pip3 install -r requirements.txt
+python3 setup.py install
 ```
 
 
@@ -114,7 +116,7 @@ The latest version of this software is available at: https://pocsuite.org
 
 ## Documentation
 
-Documentation is available in the [```docs```](https://github.com/knownsec/pocsuite3/blob/master/docs) directory.
+Documentation is available at: https://pocsuite.org
 
 ## Usage
 
@@ -127,7 +129,7 @@ cli mode
 	# run poc with shell mode
 	pocsuite -u http://example.com -r example.py -v 2 --shell
 
-	# search for the target of redis service from ZoomEye and perform batch detection of vulnerabilities. The thread is set to 20
+	# search for the target of redis service from ZoomEye and perform batch detection of vulnerabilities. The threads is set to 20
 	pocsuite -r redis.py --dork service:redis --threads 20
 
 	# load all poc in the poc directory and save the result as html
@@ -137,7 +139,7 @@ cli mode
 	pocsuite -f batch.txt --plugins poc_from_pocs,html_report
 
 	# load CIDR target
-	pocsuite -u 10.0.0.0/24 -r example.py --plugins target_from_cidr
+	pocsuite -u 10.0.0.0/24 -r example.py
 
 	# the custom parameters `command` is implemented in ecshop poc, which can be set from command line options
 	pocsuite -u http://example.com -r ecshop_rce.py --attack --command "whoami"
@@ -146,11 +148,49 @@ console mode
     poc-console
 ```
 
-
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
 
+- 2022-07-13 发布文章[《Pocsuite3 入门教程》](https://paper.seebug.org/1931/)
 
 ## 最近更新
+
+#### [v2.0.0] - 2022-11-03
+
+**更新**  
+- 支持 yaml 格式 poc，与 nuclei 的 poc 模版兼容  
+- 修复 httpserver 模块在 macos 平台卡住的问题  
+- 结合 http 状态码对 http/https 协议自动纠正
+
+#### [v1.9.11] - 2022-09-08
+
+**更新**  
+- 用户可以在 PoC 中自定义协议和默认端口，方便对 url 格式化  
+- 使用 -p 参数给目标添加额外端口，可同时提供协议  
+- 使用 -s 参数可以 skip target 本身的端口，只使用 -p 提供的端口  
+- poc-console 优化  
+- 一些改进和 bug 修复
+
+#### [v1.9.9] - 2022-08-24
+
+**更新**  
+- 新增根据 poc 协议字段自动修正 target 路径  
+- 修复 windows 平台 poc-console 高亮显示的问题  
+- 默认去除 target 路径末尾的 '/' 字符
+
+#### [v1.9.8] - 2022-08-06
+
+**更新**  
+- 支持对 PoC 全文进行正则搜索  
+- 在基类 POCBase 中为 PoC 的所有属性设置了默认值  
+- 添加监听/反连 shell  
+- 修复 fofa 插件分页查询的 bug
+
+#### [v1.9.7] - 2022-07-26
+
+**更新**  
+- 优化 poc 文件编码兼容问题  
+- 混淆 REVERSE_PAYLOAD 以避免源码文件触发 windows defender  
+- 优化 --ppt 敏感信息打码显示功能
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

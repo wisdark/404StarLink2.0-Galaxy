@@ -2,11 +2,11 @@
 
 1. [AppInfoScanner](#appinfoscanner)
 2. [HaE](#hae)
-3. [DarkEye](#darkeye)
-4. [Kunyu](#kunyu)
-5. [Glass](#glass)
-6. [ZoomEye-Python](#zoomeye-python)
-7. [ksubdomain](#ksubdomain)
+3. [Kunyu](#kunyu)
+4. [Glass](#glass)
+5. [scaninfo](#scaninfo)
+6. [ksubdomain](#ksubdomain)
+7. [ZoomEye-Python](#zoomeye-python)
 8. [ct](#ct)
 9. [Zoomeye-Tools](#zoomeye-tools)
 10. [ZoomEye-go](#zoomeye-go)
@@ -17,7 +17,7 @@
 ![Author](https://img.shields.io/badge/Author-kelvinBen-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/kelvinBen/AppInfoScanner.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.8-red)
+![Version](https://img.shields.io/badge/Version-V1.0.9-red)
 
 <https://github.com/kelvinBen/AppInfoScanner>
 
@@ -27,27 +27,17 @@
 ![Author](https://img.shields.io/badge/Author-gh0stkey-orange)
 ![Language](https://img.shields.io/badge/Language-Java-blue)
 ![GitHub stars](https://img.shields.io/github/stars/gh0stkey/HaE.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.1.3-red)
+![Version](https://img.shields.io/badge/Version-V2.4.2-red)
 
 <https://github.com/gh0stkey/HaE>
 
 HaE是一款可以快速挖掘目标指纹和关键信息的Burp插件。
 
-### [DarkEye](detail/DarkEye.md)
-![Author](https://img.shields.io/badge/Author-zsdevX-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/zsdevX/DarkEye.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V4.3.0-red)
-
-<https://github.com/zsdevX/DarkEye>
-
-基于go完成的渗透测试信息收集利器
-
 ### [Kunyu](detail/Kunyu.md)
 ![Author](https://img.shields.io/badge/Author-风起-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/knownsec/Kunyu.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.6.5-red)
+![Version](https://img.shields.io/badge/Version-V1.7.2-red)
 
 <https://github.com/knownsec/Kunyu>
 
@@ -63,6 +53,26 @@ Kunyu(坤舆)，是一款基于ZoomEye API开发的信息收集工具，旨在�
 
 Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/ZoomEye/Shodan/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP/IP段或资产列表进行快速的指纹识别。
 
+### [scaninfo](detail/scaninfo.md)
+![Author](https://img.shields.io/badge/Author-华东360安服团队-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/redtoolskobe/scaninfo.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.1.0-red)
+
+<https://github.com/redtoolskobe/scaninfo>
+
+scaninfo 是一款开源、轻量、快速、跨平台的红队内外网打点扫描器。比较同类工具，其能够在 nmap 的扫描速度和 masscan 的准确度之间寻找一个较好的平衡点，能够快速进行端口扫描和服务识别，内置指纹识别用于 web 探测，可以用报告的方式整理扫描结果。
+
+### [ksubdomain](detail/ksubdomain.md)
+![Author](https://img.shields.io/badge/Author-w8ay-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/boy-hack/ksubdomain.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.9.5-red)
+
+<https://github.com/boy-hack/ksubdomain>
+
+ksubdomain是一款基于无状态子域名爆破工具，支持在Windows/Linux/Mac上使用，它会很快的进行DNS爆破，在Mac和Windows上理论最大发包速度在30w/s,linux上为160w/s的速度。
+
 ### [ZoomEye-Python](detail/ZoomEye-Python.md)
 ![Author](https://img.shields.io/badge/Author-Knownsec404-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
@@ -73,21 +83,11 @@ Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/Z
 
 ZoomEye-python 是一款基于 ZoomEye API 开发的 Python 库，提供了 ZoomEye 命令行模式，同时也可以作为 SDK 集成到其他工具中。该库可以让技术人员更便捷地搜索、筛选、导出 ZoomEye 的数据
 
-### [ksubdomain](detail/ksubdomain.md)
-![Author](https://img.shields.io/badge/Author-w8ay-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/boy-hack/ksubdomain.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.1-red)
-
-<https://github.com/boy-hack/ksubdomain>
-
-ksubdomain是一款基于无状态子域名爆破工具，支持在Windows/Linux/Mac上使用，它会很快的进行DNS爆破，在Mac和Windows上理论最大发包速度在30w/s,linux上为160w/s的速度。
-
 ### [ct](detail/ct.md)
 ![Author](https://img.shields.io/badge/Author-rungobier@Knownsec404-orange)
 ![Language](https://img.shields.io/badge/Language-Rust-blue)
 ![GitHub stars](https://img.shields.io/github/stars/knownsec/ct.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.5-red)
+![Version](https://img.shields.io/badge/Version-V1.0.9-red)
 
 <https://github.com/knownsec/ct>
 
