@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![Author](https://img.shields.io/badge/Author-madneal-orange)
 ![GitHub stars](https://img.shields.io/github/stars/madneal/gshark.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+![Version](https://img.shields.io/badge/Version-V1.1.4-red)
 ![Time](https://img.shields.io/badge/Join-20201221-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -151,54 +151,55 @@ go env -w GO111MODULE=on
 
 ## 最近更新
 
-#### [v1.0.0] - 2022-08-13
-
-**Added**  
-- 增加 Postman 监控功能
-
-#### [v0.9.9] - 2022-07-09
-
-**Added**  
-- 增加多种规则类型支持  
-- README 文档增加描述，增加文章以及视频链接  
+#### [v1.1.4] - 2023-02-15
 
 **Fixed**  
-- 修复批量导入规则默认没有启用规则的问题  
-- 修改规则新增前端是否启用的样式
-
-#### [v0.9.8] - 2022-07-02
+- 修复无法变更规则状态的问题  
+- 增加新增 token 的 postman 类型  
 
 **Added**  
-- 批量导入规则功能  
+- 增加 startSecFilterTask 以及 getTaskStatus API 权限初始化
+
+#### [v1.1.3] - 2023-01-31
 
 **Fixed**  
-- 登录背景图案调整  
-- 企业微信通知提醒启用配置问题
-
-#### [v0.9.7] - 2022-05-21
+- 修复变更规则错误的问题  
+- 修复搜索代码结果错误的问题  
 
 **Added**  
-- Gitlab 提供更好的搜索能力  
+- 增加 switchRuleStatus 权限初始化  
+- github client 初始化增加 httpcache
 
-**Removed**  
-- 移除无用的图片资源  
-- 优化 Config 数据结构，进行配置项合并
+#### [v1.1.2] - 2023-01-18
 
-#### [v0.9.6] - 2022-05-04
+**Fixed**  
+- 修复执行过滤任务时未成功忽略仓库的问题  
+- 修复 deleted_at 字段造成的初始化失败的问题  
+- 修复字段问题导致忽略单个结果失败的问题  
 
-**新增**  
-- 增加 DNS 内置模块进行子域名爆破  
-- 前端增加 domian 类型  
-- 调整登录页样式  
-- 增加中文 README  
-- 增加 sql.md，用于增量部署  
+**Added**  
+- 增加仅展示二次过滤的结果  
+- 增加 getTaskStatus API 权限初始化
 
-**修复**  
-- 修复保存时的数据库报错  
-- 修复未发送消息提醒的问题  
-- 修复未处理结果重复保存的问题  
+#### [v1.1.1] - 2023-01-16
 
-**优化**  
-- 简化 token 的数据结构
+**Mofified**  
+- 修改日志时间格式  
+
+**Fixed**  
+- 修复前端变更过滤规则问题  
+- 修改忽略仓库状态的问题  
+- 修复 filter_type 黑白名单问题
+
+#### [v1.1.0] - 2023-01-15
+
+**Added**  
+- 启用二次过滤规则功能(重大更新)  
+
+**Modified**  
+- 优化 GitHub 搜索  
+- 过滤规则重构，支持 extension, keyword, sec_keyword 白名单以及黑名单过滤  
+- 优化匹配结果展示，突出匹配的关键词  
+- 修改 eslint 规则
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

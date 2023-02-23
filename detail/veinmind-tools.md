@@ -3,14 +3,16 @@
 ![Language](https://img.shields.io/badge/Language-Golang/Python-blue)
 ![Author](https://img.shields.io/badge/Author-长亭科技-orange)
 ![GitHub stars](https://img.shields.io/github/stars/chaitin/veinmind-tools.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.4-red)
+![Version](https://img.shields.io/badge/Version-V2.0.1-red)
 ![Time](https://img.shields.io/badge/Join-20220316-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
-veinmind-tools 是由长亭科技自研，基于<a href="https://github.com/chaitin/libveinmind">veinmind-sdk</a>打造的容器安全工具集
+veinmind-tools 是由长亭科技自研，基于 <a href="https://github.com/chaitin/libveinmind">veinmind-sdk</a> 打造的容器安全工具集
+
+veinmind, 中文名为<b>问脉</b>，寓意 <b>容器安全见筋脉，望闻问切治病害。</b> 旨在成为云原生领域的一剂良方
 
 ## 🔥 Demo
-![](https://dinfinite.oss-cn-beijing.aliyuncs.com/image/20220415144819.gif)
+![](https://veinmind-cache.oss-cn-hangzhou.aliyuncs.com/img/index.gif)
 
 
 ## 🕹️ 快速开始
@@ -28,37 +30,46 @@ wget -q https://download.veinmind.tech/scripts/veinmind-runner-parallel-containe
 ```
 ### 4. 快速扫描本地镜像
 ```
-./run.sh scan-host
+./run.sh scan image
 ```
 
 
 ## 🔨 工具列表
 
-| 工具                                                      | 功能              | 
-|---------------------------------------------------------|-----------------|
-| [veinmind-runner](https://github.com/chaitin/veinmind-tools/blob/master/veinmind-runner/README.md)            | 扫描工具运行宿主        |
-| [veinmind-malicious](https://github.com/chaitin/veinmind-tools/blob/master/plugins/go/veinmind-malicious)     | 扫描镜像中的恶意文件      |
-| [veinmind-weakpass](https://github.com/chaitin/veinmind-tools/blob/master/plugins/go/veinmind-weakpass)       | 扫描镜像中的弱口令       |
-| [veinmind-sensitive](https://github.com/chaitin/veinmind-tools/blob/master/plugins/python/veinmind-sensitive) | 扫描镜像中的敏感信息      |
-| [veinmind-backdoor](https://github.com/chaitin/veinmind-tools/blob/master/plugins/python/veinmind-backdoor)   | 扫描镜像中的后门        |
-| [veinmind-history](https://github.com/chaitin/veinmind-tools/blob/master/plugins/python/veinmind-history)     | 扫描镜像中的异常历史命令    |
-| [veinmind-asset](https://github.com/chaitin/veinmind-tools/blob/master/plugins/go/veinmind-asset)             | 扫描镜像中的资产信息      |
-| [veinmind-webshell](https://github.com/chaitin/veinmind-tools/blob/master/plugins/go/veinmind-webshell)       | 扫描镜像中的 Webshell |
+| 工具                                                        | 功能              | 
+|-----------------------------------------------------------|-----------------|
+| [veinmind-runner](veinmind-runner/README.md)              | 扫描工具运行宿主        |
+| [veinmind-malicious](plugins/go/veinmind-malicious)       | 扫描镜像中的恶意文件      |
+| [veinmind-weakpass](plugins/go/veinmind-weakpass)         | 扫描 镜像/容器 中的弱口令  |
+| [veinmind-log4j2](plugins/go/veinmind-log4j2)             | 扫描镜像中的log4j2漏洞  |
+| [veinmind-sensitive](plugins/python/veinmind-sensitive)   | 扫描镜像中的敏感信息      |
+| [veinmind-backdoor](plugins/python/veinmind-backdoor)     | 扫描镜像中的后门        |
+| [veinmind-history](plugins/python/veinmind-history)       | 扫描镜像中的异常历史命令    |
+| [veinmind-vuln](plugins/go/veinmind-vuln)                 | 扫描镜像中的资产信息和漏洞   |
+| [veinmind-webshell](plugins/go/veinmind-webshell)         | 扫描镜像中的 Webshell |
+| [veinmind-unsafe-mount](plugins/go/veinmind-unsafe-mount) | 扫描容器中的不安全挂载目录   |
+| [veinmind-iac](plugins/go/veinmind-iac)                   | 扫描IaC文件         |
     
 PS: 目前所有工具均已支持平行容器的方式运行
 
-## ☁️ 云原生设施兼容性
-| 名称                                                          | 类别 | 是否兼容 |
-|-------------------------------------------------------------|------|----------|
-| [Jenkins](https://github.com/chaitin/veinmind-jenkins)      | CI/CD | ✔️ |
-| Gitlab CI                                                   | CI/CD | ✔️ |
-| [Github Action](https://github.com/chaitin/veinmind-action) | CI/CD | ✔️ |
-| DockerHub                                                   | 镜像仓库 | ✔️ |
-| Docker Registry                                             | 镜像仓库 | ✔️ |
-| Harbor                                                      | 镜像仓库 | ✔️ |
-| Docker                                                      | 容器运行时 | ✔️ |
-| Containerd                                                  | 容器运行时 | ✔️ |
+## 🧑‍💻 编写插件
 
+可以通过 example 快速创建一个 veinmind-tools 插件, 具体查看 [veinmind-example](example/)  
+
+## ☁️ 云原生设施兼容性
+| 名称                                                          | 类别    | 是否兼容 |
+|-------------------------------------------------------------|-------|------|
+| [Jenkins](https://github.com/chaitin/veinmind-jenkins)      | CI/CD | ✔️   |
+| Gitlab CI                                                   | CI/CD | ✔️   |
+| [Github Action](https://github.com/chaitin/veinmind-action) | CI/CD | ✔️   |
+| DockerHub                                                   | 镜像仓库  | ✔️   |
+| Docker Registry                                             | 镜像仓库  | ✔️   |
+| Harbor                                                      | 镜像仓库  | ✔️   |
+| Docker                                                      | 容器运行时 | ✔️   |
+| Containerd                                                  | 容器运行时 | ✔️   |
+
+## 🛴 工作原理
+![](https://github.com/chaitin/veinmind-tools/raw/master/docs/architecture.png)
 
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
@@ -66,33 +77,44 @@ PS: 目前所有工具均已支持平行容器的方式运行
 
 ## 最近更新
 
-#### [v1.5.4] - 2022-11-02
+#### [v2.0.1] - 2023-02-15
+
+**Feature**  
+- 支持 arm64 构建  
+
+**Fix**  
+- 修复 Makefile  
+- 修复 veinmind-iac 文件识别问题  
+- 修复 veinmind-sensitive 扫描过慢问题
+
+#### [v2.0.0] - 2023-02-10
+
+**Feature**  
+- runner cmd优化: 协议化扫描对象  
+- runner 支持插件参数自定义  
+- runner 支持扫描 tar 类型镜像  
+- 插件报告输出优化：支持 cli/json/htm  
+- script.sh => makefile  
+- 新增 veinmind-esclate 逃逸检测插件  
+- veinmind-asset 升级为 veinmind-vuln，支持漏洞扫描  
+- iac 支持扫描 kubernetes
+
+#### [v1.7.0] - 2023-01-17
+
+**Feature**  
+- veinmind-sensitive 使用 golang 进行开发  
+- 基于 remote.Image 直接扫描仓库镜像  
+- 新增 veinmind-vuln 插件  
+- 重构 veinmind-runner 命令行使用方式
+
+#### [v1.6.5] - 2022-12-16
 
 **更新**  
-- 新增 veinmind-unsafe-mount 插件  
-- 移除项目内 python 依赖
+- veinmind-iac 支持扫描 k8s 集群
 
-#### [v1.5.3] - 2022-10-26
-
-**更新**  
-- 新增 veinmind-log4j2 插件  
-- 新增快速生成插件脚本  
-- veinmind-sensitive 支持扫描镜像构建历史敏感信息
-
-#### [v1.5.1] - 2022-09-14
+#### [v1.6.4] - 2022-12-02
 
 **更新**  
-- veinmind-basic 支持容器扫描
-
-#### [v1.5.0] - 2022-08-19
-
-**更新**  
-- 新增 veinmind-webshell 检测插件
-
-#### [v1.4.2] - 2022-08-12
-
-**更新**  
-- 支持插件依赖服务管理机制  
-- veinmind-runner 镜像支持使用 veinmind-malicious 扫描恶意文件
+- veinmind-iac 增加部分 k8s 相关规则
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

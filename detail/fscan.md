@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![Author](https://img.shields.io/badge/Author-shadow1ng-orange)
 ![GitHub stars](https://img.shields.io/github/stars/shadow1ng/fscan.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.1-red)
+![Version](https://img.shields.io/badge/Version-V1.8.2-red)
 ![Time](https://img.shields.io/badge/Join-20210422-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -180,8 +180,15 @@ go build -ldflags="-s -w " -trimpath
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
 
+- 2022-12-09 发布演示视频[404星链计划开源安全工具演示——fscan](https://www.bilibili.com/video/BV1Cv4y1R72M/)
 
 ## 最近更新
+
+#### [v1.8.2] - 2022-11-19
+
+**更新**  
+- 新增 hash 碰撞  
+- 新增 wmiiexec 无回显命令执行
 
 #### [v1.8.1] - 2022-07-06
 
