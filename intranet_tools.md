@@ -7,7 +7,7 @@
 5. [ServerScan](#serverscan)
 6. [Platypus](#platypus)
 7. [WMIHACKER](#wmihacker)
-8. [geacon_pro](#geacon_pro)
+8. [rakshasa](#rakshasa)
 9. [As-Exploits](#as-exploits)
 10. [PortForward](#portforward)
 
@@ -17,7 +17,7 @@
 ![Author](https://img.shields.io/badge/Author-shadow1ng-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/shadow1ng/fscan.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.2-red)
+![Version](https://img.shields.io/badge/Version-V1.8.4-red)
 
 <https://github.com/shadow1ng/fscan>
 
@@ -37,7 +37,7 @@
 ![Author](https://img.shields.io/badge/Author-ph4ntonn-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/ph4ntonn/Stowaway.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.1-red)
+![Version](https://img.shields.io/badge/Version-V2.2-red)
 
 <https://github.com/ph4ntonn/Stowaway>
 
@@ -83,21 +83,21 @@ Platypus 是一个基于终端与 Web UI 交互式的反弹 Shell 会话管理�
 
 WMIHACKER是一款免杀横向渗透远程命令执行工具，常见的WMIEXEC、PSEXEC执行命令是创建服务或调用Win32_Process.create执行命令，这些方式都已经被杀软100%拦截，通过改造出的WMIHACKER可免杀横向移动。并且在企业网络目前阻断445端口严重的情况下可以无需445端口进行横向移动，效率高且不易被检测。
 
-### [geacon_pro](detail/geacon_pro.md)
-![Author](https://img.shields.io/badge/Author-H4de5-orange)
+### [rakshasa](detail/rakshasa.md)
+![Author](https://img.shields.io/badge/Author-Mob2003-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/H4de5-7/geacon_pro.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.3.0-red)
+![GitHub stars](https://img.shields.io/github/stars/Mob2003/rakshasa.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.2.3-red)
 
-<https://github.com/H4de5-7/geacon_pro>
+<https://github.com/Mob2003/rakshasa>
 
-跨平台重构了Cobaltstrike Beacon，适配了大部分Beacon的功能，行为对国内主流杀软免杀，支持4.1以上的版本。 A cross-platform CobaltStrike Beacon bypass anti-virus, supports 4.1+ version。
+rakshasa是一个使用Go语言编写的强大多级代理工具，专为实现多级代理，内网穿透而设计。它可以在节点群里面任意两个节点之间转发TCP请求和响应，同时支持socks5代理，http代理，并且可以引入外部http、socks5代理池，自动切换请求IP。
 
 ### [As-Exploits](detail/As-Exploits.md)
 ![Author](https://img.shields.io/badge/Author-yzddmr6-orange)
 ![Language](https://img.shields.io/badge/Language-JavaScript-blue)
 ![GitHub stars](https://img.shields.io/github/stars/yzddmr6/As-Exploits.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+![Version](https://img.shields.io/badge/Version-V1.5.0-red)
 
 <https://github.com/yzddmr6/As-Exploits>
 

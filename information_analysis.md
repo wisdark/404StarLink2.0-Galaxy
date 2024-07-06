@@ -3,9 +3,12 @@
 1. [HackBrowserData](#hackbrowserdata)
 2. [KunLun-M](#kunlun-m)
 3. [frida-skeleton](#frida-skeleton)
-4. [java-object-searcher](#java-object-searcher)
-5. [MySQLMonitor](#mysqlmonitor)
-6. [CodeReviewTools](#codereviewtools)
+4. [AppScan](#appscan)
+5. [Pillager](#pillager)
+6. [java-object-searcher](#java-object-searcher)
+7. [js-cookie-monitor-debugger-hook](#js-cookie-monitor-debugger-hook)
+8. [MySQLMonitor](#mysqlmonitor)
+9. [CodeReviewTools](#codereviewtools)
 
 ----------------------------------------
 
@@ -13,7 +16,7 @@
 ![Author](https://img.shields.io/badge/Author-moonD4rk-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/moonD4rk/HackBrowserData.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.4.4-red)
+![Version](https://img.shields.io/badge/Version-V0.4.5-red)
 
 <https://github.com/moonD4rk/HackBrowserData>
 
@@ -39,6 +42,26 @@ KunLun-M是一个完全开源的静态白盒扫描工具，支持PHP、JavaScrip
 
 frida-skeleton是基于frida的安卓hook框架，提供了很多frida自身不支持的功能，将hook安卓变成简单便捷，人人都会的事情。
 
+### [AppScan](detail/AppScan.md)
+![Author](https://img.shields.io/badge/Author-TongchengOpenSource-orange)
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/TongchengOpenSource/AppScan.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V2.1.5-red)
+
+<https://github.com/TongchengOpenSource/AppScan>
+
+安全隐私卫士（AppScan）一款免费的企业级自动化App隐私合规检测工具
+
+### [Pillager](detail/Pillager.md)
+![Author](https://img.shields.io/badge/Author-qwqdanchun-orange)
+![Language](https://img.shields.io/badge/Language-C#-blue)
+![GitHub stars](https://img.shields.io/github/stars/qwqdanchun/Pillager.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.0.1-red)
+
+<https://github.com/qwqdanchun/Pillager>
+
+Pillager是一个适用于后渗透期间的信息收集工具，可以收集目标机器上敏感信息，方便下一步渗透工作的进行。
+
 ### [java-object-searcher](detail/java-object-searcher.md)
 ![Author](https://img.shields.io/badge/Author-c0ny1-orange)
 ![Language](https://img.shields.io/badge/Language-Java-blue)
@@ -48,6 +71,16 @@ frida-skeleton是基于frida的安卓hook框架，提供了很多frida自身不�
 <https://github.com/c0ny1/java-object-searcher>
 
 java内存对象搜索辅助工具，配合IDEA在Java应用运行时，对内存中的对象进行搜索。比如可以可以用挖掘request对象用于回显等场景。
+
+### [js-cookie-monitor-debugger-hook](detail/js-cookie-monitor-debugger-hook.md)
+![Author](https://img.shields.io/badge/Author-JSREI-orange)
+![Language](https://img.shields.io/badge/Language-JavaScript-blue)
+![GitHub stars](https://img.shields.io/github/stars/JSREI/js-cookie-monitor-debugger-hook.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.11.0-red)
+
+<https://github.com/JSREI/js-cookie-monitor-debugger-hook>
+
+js cookie逆向利器：js cookie变动监控可视化工具 & js cookie hook打条件断点
 
 ### [MySQLMonitor](detail/MySQLMonitor.md)
 ![Author](https://img.shields.io/badge/Author-TheKingOfDuck-orange)

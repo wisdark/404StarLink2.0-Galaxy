@@ -3,26 +3,21 @@
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![Author](https://img.shields.io/badge/Author-wgpsec-orange)
 ![GitHub stars](https://img.shields.io/github/stars/wgpsec/ENScan_GO.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.0.9-red)
+![Version](https://img.shields.io/badge/Version-V1.0.0-red)
 ![Time](https://img.shields.io/badge/Join-20221117-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
 剑指HW/SRC，解决在HW/SRC场景下遇到的各种针对国内企业信息收集难题
 
 ## 功能列表
-
-**使用程序可能导致账号被封，仅用于信息收集用途，请勿用于非法用途**
-
 ![ENScanGo](https://github.com/wgpsec/ENScan_GO/raw/master/README/ENScanGo.png)
 
  - 使用支持以下API，并支持合并数据导出
     - 爱企查 (未登陆信息带*)
     - 天眼查
-    - 阿拉丁
+    - 阿拉丁 （数据反馈比较老旧暂时下线）
     - 酷安市场
     - 七麦数据
-    - 站长之家
-    - veryvp
  - 查询信息
     - ICP备案
     - APP
@@ -39,12 +34,37 @@
 
 
 ## 使用指南
+### 第一次使用
+前往[RELEASE](https://github.com/wgpsec/ENScan_GO/releases)下载编译好的文件使用
 
-ENScanGo在第一次使用时需要使用 -v 命令 生成配置文件信息
+初次使用时需要使用 -v 命令生成配置文件信息
+```
+./enscan -v
+```
+
+**遇到问题请加上参数 --debug 提issue**
+
+如果查询不出来目标网站信息，可以都挂上BURP代理进行查询
+
+**自行编译请使用 go 编译命令，或使用编译脚本 build.sh**
+
+### 登陆配置
+
+**AQC**
+
+出现安全验证请勿结束进程，请使用带cookie的浏览器过验证即可继续
+
+请注意获取COOKIE域名，默认查询为aiqicha.baidu.com，请勿使用 aiqicha.com
 
 Cookie信息请勿直接 `document.cookie`，可能因为http-only 选项无法复制全导致登陆失败
 
 ![image-20221028223835307](https://github.com/wgpsec/ENScan_GO/raw/master/README/image-20221028223835307.png)
+
+**TYC tycid**
+
+配置COOKIE后配置tycid
+
+![image-20230722194839975](https://github.com/wgpsec/ENScan_GO/raw/master/README/image-20230722194839975.png)
 
 ### 快速使用
 
@@ -79,7 +99,7 @@ Cookie信息请勿直接 `document.cookie`，可能因为http-only 选项无法�
 使用多数据源一起收集（暂不支持多渠道+筛选）
 
 ```
-./enscan -n 小米 -type aqc,chinaz,qimai,coolapk
+./enscan -n 小米 -type aqc,tyc
 ```
 
 ### 选项说明
@@ -137,10 +157,8 @@ Cookie信息请勿直接 `document.cookie`，可能因为http-only 选项无法�
 | -branch           |                | 查询分支机构（分公司）信息             |
 | -is-branch        |                | 深度查询分支机构信息（数量巨大）       |
 | -api              |                | 是否API模式                            |
-| -client           |                | 客户端模式通道                         |
 | -debug            |                | 是否显示debug详细信息                  |
 | -is-show          |                | 是否展示信息输出                       |
-| -uncertain-invest |                | 包括未公示投资公司（无法确定占股比例） |
 | -is-group         |                | 查询关键词为集团                       |
 | -is-pid           |                | 批量查询文件是否为公司PID              |
 | -delay            |                | 每个请求延迟（S）-1为随机延迟1-5S      |
@@ -148,15 +166,12 @@ Cookie信息请勿直接 `document.cookie`，可能因为http-only 选项无法�
 | -timeout          |                | 每个请求默认1（分钟）超时              |
 | -no-merge         |                | 批量查询【取消】合并导出               |
 | -v                |                | 版本信息                               |
-| -email            |                | 获取email信息                          |
-
 ### API模式
 
-ENScanGo可使用API模式进行分布式部署，搭建API服务构建资产处理
-
-使用`rmq`作为任务队列组件，在redis存入任务信息，可分部署部署。数据可存储至mongodb进行调用分析。
 
 **api调用效果（前端开发中）**
+
+可使用 https://enscan.wgpsec.org/api/info 体验 (因被滥用下线)
 
 ![image-20221028231744940](https://github.com/wgpsec/ENScan_GO/raw/master/README/image-20221028231744940.png)
 
@@ -168,15 +183,7 @@ ENScanGo可使用API模式进行分布式部署，搭建API服务构建资产处
 
 #### API说明
 
-在获取信息的内容在数据库内不存在时，会自动添加队列任务收集相关信息
-
-**状态信息**
-
-返回当前系统状态信息
-
-```
-GET /status
-```
+获取信息将实时查询展示，可与其他工具进行API联动
 
 **获取信息**
 
@@ -184,82 +191,34 @@ GET /status
 GET /api/info?search=小米&invest=100&branch=true
 ```
 
-| 参数      | 参数                 | 说明                       |
-| --------- | -------------------- | -------------------------- |
-| orgname   | 文本                 | 完整公司名称（二选一）     |
-| search    | 文本                 | 模糊匹配公司名称（二选一） |
-| type      | 文本，与命令参数一致 | 数据源                     |
-| field     | 文本，与命令参数一致 | 筛选指定信息               |
-| duplicate | true                 | 加上参数去重               |
-| depth     | 数字                 | 爬取几层公司 如 2 为孙公司 |
-| invest    | 数字                 | 筛选投资比例               |
-| holds     | true                 | 筛选控股公司               |
-| supplier  | true                 | 筛选供应商信息             |
-| branch    | true                 | 筛选分支信息               |
-| output    | true                 | 为true导出excel表格        |
+| 参数     | 参数                 | 说明                       |
+| ------ | -------------------- | -------------------------- |
+| name   | 文本                 | 完整公司名称（二选一）     |
+| type   | 文本，与命令参数一致 | 数据源                     |
+| field  | 文本，与命令参数一致 | 筛选指定信息               |
+| depth  | 数字                 | 爬取几层公司 如 2 为孙公司 |
+| invest | 数字                 | 筛选投资比例               |
+| holds  | true                 | 筛选控股公司               |
+| supplier | true                 | 筛选供应商信息             |
+| branch | true                 | 筛选分支信息               |
+| output | true                 | 为true导出excel表格        |
 
-**股权穿透**
-
-返回投资、股东关联信息
-
-```
-GET /api/stockchart
-```
-
-| 参数      | 参数 | 说明             |
-| --------- | ---- | ---------------- |
-| orgname   | 文本 | 完整公司名称     |
-| search    | 文本 | 模糊匹配公司信息 |
-| duplicate | true | 是否去重         |
-
-**添加获取任务**
-
-添加新的任务信息
-
-```
-POST /api/info
-```
-
-| 参数      | 参数                 | 说明         |
-| --------- | -------------------- | ------------ |
-| orgname   | 文本                 | 完整公司名称 |
-| update    | true                 | 是否更新     |
-| type      | 文本，与命令参数一致 | 数据源       |
-| invest_rd | true                 | 不确定投资   |
-| branch    | true                 | 获取分支信息 |
-| field     | 文本，与命令参数一致 | 筛选字段     |
-| invest    | 数字                 | 投资信息     |
 
 #### 启动部署
 
-首先我们需要对配置文件进行修改，加入数据库连接信息，与common同级加入以下配置
-
-```yaml
-api:
-  server: "127.0.0.1" # redis地址
-  mongodb: "mongodb://user:pass@127.0.0.1:27017" # mongodb 连接信息
-  redis: "redis_password" # redis 密码
-  port: "8080" # 启动API端口
+**golang 版本依赖**
 ```
+go >= 1.22.1
+```
+
 
 **API模式**
 
 启动API模式将在配置端口监听，并启动api服务，可通过api服务进行调用读取数据
 
-在此场景下无需配置cookie信息
-
 ```
 ./enscan --api
 ```
-
-**客户端模式**
-
-可作为部署节点，读取任务队列自动读取信息写入数据库
-
-```
-./enscan --client
-```
-
 
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
@@ -267,19 +226,38 @@ api:
 
 ## 最近更新
 
-#### [v0.0.9] - 2023-02-13
-
-**bugfix**  
-- 修复JSON导出问题  
-- 修复天眼查日期问题  
-- 修复阿拉丁导出bug  
-
-**new**  
-- 增加只在终端显示不导出文件
-
-#### [v0.0.8] - 2023-02-12
+#### [v1.0.0] - 2024-05-21
 
 **更新**  
-- 增加JSON导出功能
+- 重构查询代码，采用接口实现功能，方便接入新接口  
+- 优化提示逻辑  
+- 优化删除冗余代码，删除鸡肋的web功能，换成实时api功能方便接入其他工具  
+- 增加意外退出保存功能  
+- 增加单独信息实时保存功能 -n xxx -field icp -out-update icp.csv 将会实时写入该文件，可增加其他查询参数如投资占比等，但不会输出
+
+#### [v0.0.18] - 2024-04-23
+
+**更新**  
+- 修复TYC验证码问题  
+- 使用os库替换遗弃的io/ioutil  
+- 更新交叉编译脚本  
+- 更新安装使用说明
+
+#### [v0.0.17] - 2024-04-14
+
+**更新**  
+- 修复AQC安全验证问题
+
+#### [v0.0.16] - 2024-01-16
+
+**更新**  
+- 增加轻量web模式 --web 模式即可启动默认端口为3000  
+- 访问 /api/info 即可搜索，无需配置数据库
+
+#### [v0.0.15] - 2023-08-16
+
+**更新**  
+- 修复AQC查询问题  
+- 当ENSCAN无法正常访问网站可尝试使用-proxy参数挂上代理
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

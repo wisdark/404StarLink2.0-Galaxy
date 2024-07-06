@@ -3,58 +3,65 @@
 ![Language](https://img.shields.io/badge/Language-Java-blue)
 ![Author](https://img.shields.io/badge/Author-gh0stkey-orange)
 ![GitHub stars](https://img.shields.io/github/stars/gh0stkey/HaE.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.4.5-red)
+![Version](https://img.shields.io/badge/Version-V3.2.2-red)
 ![Time](https://img.shields.io/badge/Join-20210120-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
-
 ## 项目介绍
 
-**HaE**是基于 `BurpSuite Java插件API` 开发的请求高亮标记与信息提取的辅助型框架式插件，该插件可以通过自定义正则的方式匹配响应报文或请求报文，并对满足正则匹配的报文进行信息高亮与提取。
+**HaE**是一款网络安全（数据安全）领域下的辅助型框架式项目，旨在实现对HTTP消息（包含WebSocket）的高亮标记和信息提取。本项目通过自定义正则表达式匹配响应报文或请求报文，并对匹配成功的报文进行标记和提取。
 
-现代化Web应用走上前后端分离开发模式，这就导致在日常测试时候会有许多的流量，如果你想要尽可能全面的对一个Web应用进行测试评估，将花费大量精力浪费在无用的报文上；**HaE的出现正是为了解决这一类似场景**，借助HaE你可以**有效的减少**测试的时间，将更多的精力放在**有价值、有意义**的报文上，**提高漏洞挖掘效率**。
+> 随着现代化Web应用采用前后端分离的开发模式，日常漏洞挖掘的过程中，捕获的HTTP请求流量也相应增加。若想全面评估一个Web应用，会花费大量时间在无用的报文上。**HaE的出现旨在解决这类情况**，借助HaE，您能够**有效减少**测试时间，将更多精力集中在**有价值且有意义**的报文上，从而**提高漏洞挖掘效率**。
 
-**注**: 要想灵活的使用`HaE`，你需要掌握正则表达式阅读、编写、修改能力；由于`Java`正则表达式的库并没有`Python`的优雅或方便，所以HaE要求使用者必须用`()`将所需提取的表达式内容包含；例如你要匹配一个**Shiro应用**的响应报文，正常匹配规则为`rememberMe=delete`，如果你要提取这段内容的话就需要变成`(rememberMe=delete)`。
+**注意事项**: 
+
+1. 由于HaE 3.0版本开始采用`Montoya API`进行开发，因此使用新版HaE需要升级你的BurpSuite版本（>=2023.12.1）。
+2. 由于HaE 2.6版本后对规则字段进行了更新，因此无法适配<=2.6版本的规则，请用户自行前往[规则转换页面](https://gh0st.cn/HaE/ConversionRule.html)进行转换。
+3. HaE官方规则库存放在[Github](https://raw.githubusercontent.com/gh0stkey/HaE/gh-pages/Rules.yml)上，因此点击`Update`升级HaE官方规则库时需使用代理（BApp审核考虑安全性，不允许使用CDN）。
+4. 自定义HaE规则必须用左右括号`()`将所需提取的表达式内容包含，例如你要匹配一个**Shiro应用**的响应报文，正常匹配规则为`rememberMe=delete`，在HaE的规则中就需要变成`(rememberMe=delete)`。
 
 ## 使用方法
 
 插件装载: `Extender - Extensions - Add - Select File - Next`
 
-初次装载`HaE`会初始化配置文件，默认配置文件内置一个正则: `Email`，初始化的配置文件会放在的`/用户根目录/.config/HaE/`目录下。
+初次装载`HaE`会自动获取官方规则库`https://raw.githubusercontent.com/gh0stkey/HaE/gh-pages/Rules.yml`，配置文件（`Config.yml`）和规则文件（`Rules.yml`）会放在固定目录下：
 
-![-w477](https://github.com/gh0stkey/HaE/raw/master/images/show_config.png)
+1. Linux/Mac用户的配置文件目录：`~/.config/HaE/`
+2. Windows用户的配置文件目录：`%USERPROFILE%/.config/HaE/`
 
-除了初始化的配置文件外，还有`Setting.yml`，该文件用于存储配置文件路径与排除后缀名；`HaE`支持自定义配置文件路径，你可以通过点击`Select File`按钮进行选择自定义配置文件。
+除此之外，您也可以选择将配置文件存放在`HaE Jar包`的同级目录下的`/.config/HaE/`中，**以便于离线携带**。
+
+### 规则释义
+
+HaE目前的规则一共有8个字段，详细的含义如下所示：
+
+| 字段      | 含义                                                                                                                                                                                                   |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name      | 规则名称，主要用于简短概括当前规则的作用。                                                                                                                                                               |
+| F-Regex     | 规则正则，主要用于填写正则表达式。在HaE中所需提取匹配的内容需要用`(`、`)`将正则表达式进行包裹。|
+| S-Regex     | 规则正则，作用及使用同F-Regex。S-Regex为二次正则，可以用于对F-Regex匹配的数据结果进行二次的匹配提取，如不需要的情况下可以留空。|
+| Format     | 格式化输出，在NFA引擎的正则表达式中，我们可以通过`{0}`、`{1}`、`{2}`…的方式进行取分组格式化输出。默认情况下使用`{0}`即可。          |
+| Scope     | 规则作用域，主要用于表示当前规则作用于HTTP报文的哪个部分。支持请求、响应的行、头、体，以及完整的报文。                                                                                                                                               |
+| Engine    | 正则引擎，主要用于表示当前规则的正则表达式所使用的引擎。**DFA引擎**：对于文本串里的每一个字符只需扫描一次，速度快、特性少；**NFA引擎**：要翻来覆去标注字符、取消标注字符，速度慢，但是特性（如:分组、替换、分割）丰富。 |
+| Color     | 规则匹配颜色，主要用于表示当前规则匹配到对应HTTP报文时所需标记的高亮颜色。在HaE中具备颜色升级算法，当出现相同颜色时会自动向上升级一个颜色进行标记。                                                                                                                               |
+| Sensitive | 规则敏感性，主要用于表示当前规则对于大小写字母是否敏感，敏感（`True`）则严格按照大小写要求匹配，不敏感（`False`）则反之。                                                                                      |
+
 
 ## 优势特点
 
-1. **精细化配置项**：高自由度配置更适配精细化场景需求；
-2. **简洁可视界面**：简洁的可视化界面让你更加清晰了解HaE的各项配置，操作更轻松，使用更简单；
-3. **颜色升级算法**：内置颜色升级算法，避免“屠龙者终成恶龙”场景，突出最具价值的请求；
-4. **标签化规则项**：标签化你的正则规则，让规则可分类，让管理更轻松；
-5. **数据集合面板**：将所有匹配数据集合到Databoard中，使得测试、梳理更高效；
-6. **高亮标记一体**：在Proxy - History页面你可以通过颜色高亮与Comment判断请求价值；
-7. **实战化官方库**：基于实战化场景、案例进行输出的官方规则库，提升测试实战性；
-8. **配置文件易读**：配置文件使用YAML格式存储，更加便于阅读与修改。
+1. **功能**：通过对HTTP报文的颜色高亮、注释和提取，帮助使用者获取有意义的信息，**聚焦高价值报文**。
+2. **界面**：清晰可视的界面设计，以及**简洁的界面交互**，帮助使用者更轻松的了解和配置项目，**避免`多按钮`式的复杂体验**。
+3. **查询**：将HTTP报文的高亮、注释和提取到的相关信息**集中在一个数据面板**，可以一键查询、提取信息，从而提高测试和梳理效率。
+4. **算法**：内置高亮颜色的升级算法，当出现相同颜色时**会自动向上升级一个颜色**进行标记，**避免`屠龙者终成恶龙`场景**。
+5. **管理**：支持对数据的一键导出、导入，以**自定义`.hae`文件的方式**进行项目数据存储，**便于存储和共享项目数据**。
+6. **实战**：官方规则库和规则字段作用功能，都是**基于实战化场景总结输出**的，**以此提高数据的有效性、精准性发现**。
 
 | 界面名称                  | 界面展示                                              |
-| ------------------------- | ----------------------------------------------------- |
-| Rules（规则信息管理）     | <img src="https://github.com/gh0stkey/HaE/raw/master/images/rules.png" style="width: 80%" />     |
-| Config（配置信息管理）    | <img src="https://github.com/gh0stkey/HaE/raw/master/images/config.png" style="width: 80%" />    |
-| Databoard（数据集合面板） | <img src="https://github.com/gh0stkey/HaE/raw/master/images/databoard.png" style="width: 80%" /> |
-
-
-
-## 实际使用
-
-使用 RGPerson 生成测试数据，放入网站根目录文件中: 
-
-![-w467](https://github.com/gh0stkey/HaE/raw/master/images/16000719723284.jpg)
-
-访问该地址，在`Proxy - HTTP History`中可以看见高亮请求，响应标签页中含有`MarkINFO`标签，其中将匹配到的信息提取了出来。
-
-![-w1047](https://github.com/gh0stkey/HaE/raw/master/images/16000720732854.png)
-
+| ------------------------ | ---------------------------------------------------- |
+| Rules（规则管理）     | <img src="https://github.com/gh0stkey/HaE/raw/master/images/rules.png" style="width: 80%" />     |
+| Config（配置管理）    | <img src="https://github.com/gh0stkey/HaE/raw/master/images/config.png" style="width: 80%" />    |
+| Databoard（数据集合） | <img src="https://github.com/gh0stkey/HaE/raw/master/images/databoard.png" style="width: 80%" /> |
+| MarkInfo（数据展示） | <img src="https://github.com/gh0stkey/HaE/raw/master/images/markinfo.png" style="width: 80%" /> |
 
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
@@ -62,42 +69,45 @@
 
 ## 最近更新
 
-#### [v2.4.5] - 2022-12-18
+#### [v3.2.2] - 2024-06-19
 
 **更新**  
-- 在线更新配置信息功能添加提示框, 防止用户误触导致配置被更新  
-- 数据聚合查询面板添加支持通配符域名查找  
-- 数据聚合查询面板添加清空数据功能, 便于用户查看最新数据  
-- 新增规则作用域: any header(请求与响应头)/any body(请求与响应主体)
+- 修复Databoard长时间查询界面错乱问题  
+- 修复Databoard在Windows下复制截断问题  
+- 修复Databoard查询数据数量随机问题  
+- 优化Databoard清空数据逻辑  
+- 优化HTTP消息处理逻辑
 
-#### [v2.4.2] - 2022-07-15
-
-**更新**  
-- 由于原按钮的鼠标点击监听不灵敏，所以将该监听修改为动作监听  
-- 在 issue 发布「HaE公共规则」征集活动  
-- 公共规则库新增7条规则
-
-#### [v2.4.1] - 2022-06-29
+#### [v3.2.1] - 2024-05-30
 
 **更新**  
-- 采用全局ArrayList的方式遍历删除Tab，以此应对BurpSuite缓存机制导致的MarkInfo UI错误展示  
-- 移除Select File自定义选择配置文件功能，固定配置文件路径，不再支持自定义  
-- 新增Online Update功能，单击按钮可在线更新官方配置库
+* 修复多屏时HaE的信息窗口不跟随问题  
+* 修复Databoard删除数据后空数据列表保留问题  
+* 优化Databoard数据查询体验，增加底部数据加载等待条  
+* 优化Databoard数据导出、导入功能，支持大数据内容的处理
 
-#### [v2.4] - 2022-06-23
-
-**更新**  
-- 修复规则导入问题  
-- 配置文件初始化默认路径切换到用户根目录/.config/HaE/目录下  
-- 新增Databoard功能用于HaE规则匹配数据集中化查询  
-- 优化README文档，去除非必要内容，直观展示项目相关信息  
-- 发布HaE项目Logo及项目口号：赋能白帽，高效作战！提升项目品牌影响力与辨识度
-
-#### [v2.3] - 2022-05-27
+#### [v3.2] - 2024-05-24
 
 **更新**  
-- HaE规则增加sensitive字段，用于NFA引擎正则大小写敏感(更新后建议从HaE规则库中拉取最新规则)  
-- 公共规则库增加Dos Paramters、Create Script、Password Field、Username Field规则  
-- 兼容性：HaE将同时发布JDK8、9打包的Release版本
+* 修复Databoard查询数据缺少问题  
+* 修复Databoard删除数据失效问题  
+* 优化Config配置数据插入逻辑，支持回车键  
+* 新增Databoard数据导出、导入功能
+
+#### [v3.1] - 2024-05-23
+
+**更新**  
+* 修复后缀名匹配失效问题  
+* 优化HaE MarkInfo调用逻辑，减少UI重复创建  
+* 优化缓存池逻辑，基于Caffeine进行生命周期管理  
+* 优化HaE初始化逻辑，内置官方规则，初始化将不再依赖于网络  
+* 改进HaE Config布局，基于表格方式进行配置信息管理  
+* 新增HaE Config配置，可以设置Block host黑名单方式禁止HaE匹配
+
+#### [v3.0.2] - 2024-05-12
+
+**更新**  
+* 修复Databoard中当规则作用域为request line/response line时候数据无法定位问题  
+* 修复Databoard中数据的查询错乱问题
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

@@ -3,7 +3,7 @@
 ![Language](https://img.shields.io/badge/Language-JS/Python-blue)
 ![Author](https://img.shields.io/badge/Author-FunnyWolf-orange)
 ![GitHub stars](https://img.shields.io/github/stars/FunnyWolf/Viper.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.25-red)
+![Version](https://img.shields.io/badge/Version-V2.3.0-red)
 ![Time](https://img.shields.io/badge/Join-20210323-green)
 <!--auto_detail_badge_end_fef74f2d7ea73fcc43ff78e05b1e7451-->
 
@@ -75,60 +75,73 @@
 <!--auto_detail_active_begin_e1c6fb434b6f0baf6912c7a1934f772b-->
 ## 项目相关
 
+- 2023-02-14 发布演示视频[404星链计划开源安全工具演示——Viper](https://www.bilibili.com/video/BV1zv4y1s7xv)
 
 ## 最近更新
 
-#### [v1.5.25] - 2023-02-05
+#### [v2.3.0] - 2024-05-09
 
 **优化**  
-- 合并metasploit-framework 6.3.2版本 (更新多个域渗透模块)  
+* 调整互联网攻击面整体架构  
+* 优化网络资产搜索功能  
+* 优化互联网攻击面数据存储效率  
+* 适配Quake新API接口  
 
 **Bugfix**  
-- 修复编译前端代码时监听载荷报错的问题  
-- 修复持久化密码修改失败的问题
+* fix 模块无法使用新建立的监听问题  
+* fix 无法使用反溯源  
+* fix 主机性能不足时新建监听超时问题
 
-#### [v1.5.24] - 2022-09-11
+#### [v2.2.1] - 2024-04-21
 
 **新功能**  
-- 新增UI提示框获取用户输入的密码模块  
+- 新增通用配置界面,可以配置网络搜索引擎,wafw00f相关配置  
 
 **优化**  
-- mitmproxy开放公网访问,添加http代理认证  
-- msfrpc web组件由puma替换为thin,减少cpu占用  
-- msfrpc默认开启cpulimit 50%  
-- msfrpc使用OJ为默认json组件,替换yajl  
-- 更新Django 4.0  
-- 合并metasploit-framework 6.2.18版本
-
-#### [v1.5.23] - 2022-08-07
-
-**优化**  
-- 合并 metasploit-framework 6.2.12版本  
+- 服务状态新增wafw00f检查  
+- 未登录时访问导航页自动跳转  
+- nuclei支持设置漏洞级别及并发数  
+- 更新360 Quake接口  
+- 优化wafw00f性能(gevent)  
+- 优化模块报错时前端错误提示  
+- 解释器更新到python3.12及pip依赖包更新到最新版本  
+- 合并metasploit-framework 6.4.6版本  
 
 **Bugfix**  
-- 修复yajl-ruby bug导致的渗透服务无响应问题  
-- 修复msf cpu占用100%问题  
-- 修复内存占用过高问题
+- fix 扫描模块异常的错误  
+- fix 低概率生成C代码时出现编码错误
 
-#### [v1.5.21] - 2022-05-21
+#### [v2.1] - 2024-03-29
 
-**优化**  
-- 更新内网代理提示  
-- 优化被动扫描模块加载逻辑,提高性能  
-- 合并metasploit-framework 6.1.44版本  
-
-**Bugfix**  
-- FOFA报错问题issues#87
-
-#### [v1.5.19] - 2022-03-28
+**新功能**  
+- 新增通用配置界面,可以配置网络搜索引擎,wafw00f相关配置  
 
 **优化**  
-- Session文件管理增加缓存,优化首次打开速度  
-- 合并metasploit-framework 6.1.36版本  
+- 优化wafw00f和nuclei的相关接口及模块代码  
 
 **Bugfix**  
-- 修复无法使用migrate命令问题  
-- 修复无法创建虚拟监听问题  
-- 修复Windows UAC绕过运行报错问题
+- fix `自动化信息收集(通过公司名称)` 结果不全问题
+
+#### [v20231125] - 2023-11-25
+
+**修复**  
+- 修复渗透服务连接失败,请检查MSFRPC状态的问题  
+- 修复安装完成后访问Web页面时报502错误的问题
+
+#### [v20230924] - 2023-09-24
+
+**新功能**  
+- 自动编排新增Session定时任务功能  
+- 新增TCPLOG服务器模块  
+- 新增Last日志删除模块  
+
+**优化**  
+- 前端界面支持OSX的Payload和Handler生成  
+- Session展示区域支持伸缩(点击右侧按钮扩大缩小)  
+- 合并metasploit-framework 6.3.35版本  
+
+**Bugfix**  
+- fix 监听通信通道选择Session后不显示问题  
+- fix 内存执行C#可执行文件模块报错问题
 
 <!--auto_detail_active_end_f9cf7911015e9913b7e691a7a5878527-->

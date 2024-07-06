@@ -1,59 +1,67 @@
 ## 全部项目 / All_Projects
 
 * [甲方工具/party_a](#甲方工具party_a)
+    * [dperf](#dperf)
     * [Elkeid](#elkeid)
     * [linglong](#linglong)
-    * [OpenStar](#openstar)
-    * [appshark](#appshark)
-    * [veinmind-tools](#veinmind-tools)
     * [murphysec](#murphysec)
+    * [veinmind-tools](#veinmind-tools)
+    * [appshark](#appshark)
+    * [camille](#camille)
+    * [Tai-e](#tai-e)
+    * [OpenStar](#openstar)
     * [gshark](#gshark)
+    * [AppScan](#appscan)
     * [Juggler](#juggler)
+    * [vArmor](#varmor)
     * [Hades](#hades)
 
 * [信息收集/reconnaissance](#信息收集reconnaissance)
     * [AppInfoScanner](#appinfoscanner)
-    * [HaE](#hae)
     * [ENScanGo](#enscango)
+    * [HaE](#hae)
     * [Kunyu](#kunyu)
     * [Glass](#glass)
-    * [scaninfo](#scaninfo)
     * [ksubdomain](#ksubdomain)
+    * [scaninfo](#scaninfo)
     * [ZoomEye-Python](#zoomeye-python)
     * [ct](#ct)
     * [ZoomEye-Tools](#zoomeye-tools)
     * [ZoomEye-go](#zoomeye-go)
 
 * [漏洞探测/vulnerability_assessment](#漏洞探测vulnerability_assessment)
-    * [Kunpeng](#kunpeng)
     * [afrog](#afrog)
+    * [Kunpeng](#kunpeng)
     * [Pocassist](#pocassist)
     * [myscan](#myscan)
     * [LSpider](#lspider)
 
 * [攻击与利用/penetration_test](#攻击与利用penetration_test)
+    * [dperf](#dperf)
+    * [CDK](#cdk)
     * [pocsuite3](#pocsuite3)
     * [Viper](#viper)
-    * [CDK](#cdk)
-    * [cf](#cf)
     * [MDUT](#mdut)
-    * [WMIHACKER](#wmihacker)
     * [BurpCrypto](#burpcrypto)
+    * [WMIHACKER](#wmihacker)
+    * [JYso](#jyso)
     * [MySQL-Fake-Server](#mysql-fake-server)
-    * [geacon_pro](#geacon_pro)
     * [ysomap](#ysomap)
-    * [Cloud-Bucket-Leak-Detection-Tools](#cloud-bucket-leak-detection-tools)
     * [DNSlog-GO](#dnslog-go)
+    * [Cloud-Bucket-Leak-Detection-Tools](#cloud-bucket-leak-detection-tools)
     * [Antenna](#antenna)
     * [Redis-Rogue-Server](#redis-rogue-server)
-    * [MysqlT](#mysqlt)
     * [Cola-Dnslog](#cola-dnslog)
+    * [MysqlT](#mysqlt)
 
 * [信息分析/information_analysis](#信息分析information_analysis)
     * [HackBrowserData](#hackbrowserdata)
     * [KunLun-M](#kunlun-m)
     * [frida-skeleton](#frida-skeleton)
+    * [AppScan](#appscan)
+    * [Pillager](#pillager)
     * [java-object-searcher](#java-object-searcher)
+    * [js-cookie-monitor-debugger-hook](#js-cookie-monitor-debugger-hook)
     * [MySQLMonitor](#mysqlmonitor)
     * [CodeReviewTools](#codereviewtools)
 
@@ -65,13 +73,13 @@
     * [ServerScan](#serverscan)
     * [Platypus](#platypus)
     * [WMIHACKER](#wmihacker)
-    * [geacon_pro](#geacon_pro)
+    * [rakshasa](#rakshasa)
     * [As-Exploits](#as-exploits)
     * [PortForward](#portforward)
 
 * [其他/others](#其他others)
-    * [BinAbsInspector](#binabsinspector)
     * [f8x](#f8x)
+    * [BinAbsInspector](#binabsinspector)
     * [passive-scan-client](#passive-scan-client)
     * [Heimdallr](#heimdallr)
     * [wam](#wam)
@@ -80,6 +88,16 @@
 ----------------------------------------
 
 ## 甲方工具/party_a
+### [dperf](detail/dperf.md)
+![Author](https://img.shields.io/badge/Author-Benjamin-orange)
+![Language](https://img.shields.io/badge/Language-C-blue)
+![GitHub stars](https://img.shields.io/github/stars/baidu/dperf.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.7.0-red)
+
+<https://github.com/baidu/dperf>
+
+dperf 是一个100Gbps的网络性能与压力测试软件。国内多个知名安全厂商用dperf测试其防火墙。知名开源四层负载均衡DPVS在用dperf做性能测试，发布性能测试报告。
+
 ### [Elkeid](detail/Elkeid.md)
 ![Author](https://img.shields.io/badge/Author-bytedance-orange)
 ![Language](https://img.shields.io/badge/Language-C/Golang-blue)
@@ -100,15 +118,25 @@ Elkeid是一个云原生的基于主机的安全(入侵检测与风险识别)解
 
 linglong是一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。帮助企业更快发现弱口令问题。主要功能包括: 资产探测、端口爆破、定时任务、管理后台识别、报表展示。
 
-### [OpenStar](detail/OpenStar.md)
-![Author](https://img.shields.io/badge/Author-starjun-orange)
-![Language](https://img.shields.io/badge/Language-JS/Python-blue)
-![GitHub stars](https://img.shields.io/github/stars/starjun/openstar.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+### [murphysec](detail/murphysec.md)
+![Author](https://img.shields.io/badge/Author-murphysecurity-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/murphysecurity/murphysec.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.10.0-red)
 
-<https://github.com/starjun/openstar>
+<https://github.com/murphysecurity/murphysec>
 
-OpenStar 是一个基于 OpenResty 的高性能 Web 应用防火墙，支持复杂规则编写。提供了常规的 HTTP 字段规则配置，还提供了 IP 黑白名单、访问频次等配置，对于 CC 防护更提供的特定的规则算法，并且支持搭建集群进行防护。
+墨菲安全专注于软件供应链安全，murphysec 是墨菲安全的 CLI 工具，用于在命令行检测指定目录代码的依赖安全问题，也可以基于 CLI 工具实现在 CI 流程的检测。
+
+### [veinmind-tools](detail/veinmind-tools.md)
+![Author](https://img.shields.io/badge/Author-长亭科技-orange)
+![Language](https://img.shields.io/badge/Language-Golang/Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/chaitin/veinmind-tools.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V2.1.5-red)
+
+<https://github.com/chaitin/veinmind-tools>
+
+veinmind-tools 是基于 veinmind-sdk 打造的一个容器安全工具集，目前已支持镜像 恶意文件/后门/敏感信息/弱口令 的扫描，更多功能正在逐步开发中。
 
 ### [appshark](detail/appshark.md)
 ![Author](https://img.shields.io/badge/Author-bytedance-orange)
@@ -120,35 +148,55 @@ OpenStar 是一个基于 OpenResty 的高性能 Web 应用防火墙，支持复�
 
 Appshark 是一个针对安卓的静态分析工具，它的设计目标是针对超大型App的分析，Appshark支持基于json的自定义扫描规则,发现自己关心的安全漏洞以及隐私合规问题，支持灵活配置，可以在准确率以及扫描时间空间之间寻求平衡，支持自定义扩展规则，根据自己的业务需要，进行定制分析
 
-### [veinmind-tools](detail/veinmind-tools.md)
-![Author](https://img.shields.io/badge/Author-长亭科技-orange)
-![Language](https://img.shields.io/badge/Language-Golang/Python-blue)
-![GitHub stars](https://img.shields.io/github/stars/chaitin/veinmind-tools.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.0.1-red)
+### [camille](detail/camille.md)
+![Author](https://img.shields.io/badge/Author-zhengjim-orange)
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/zhengjim/camille.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.0.1-red)
 
-<https://github.com/chaitin/veinmind-tools>
+<https://github.com/zhengjim/camille>
 
-veinmind-tools 是基于 veinmind-sdk 打造的一个容器安全工具集，目前已支持镜像 恶意文件/后门/敏感信息/弱口令 的扫描，更多功能正在逐步开发中。
+现如今APP隐私合规十分重要，各监管部门不断开展APP专项治理工作及核查通报，不合规的APP通知整改或直接下架。camille可以hook住Android敏感接口，并识别是否为第三方SDK调用。根据隐私合规的场景，辅助检查是否符合隐私合规标准。
 
-### [murphysec](detail/murphysec.md)
-![Author](https://img.shields.io/badge/Author-murphysecurity-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/murphysecurity/murphysec.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.10.0-red)
+### [Tai-e](detail/Tai-e.md)
+![Author](https://img.shields.io/badge/Author-pascal_lab-orange)
+![Language](https://img.shields.io/badge/Language-Java-blue)
+![GitHub stars](https://img.shields.io/github/stars/pascal-lab/Tai-e.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.2.2-red)
 
-<https://github.com/murphysecurity/murphysec>
+<https://github.com/pascal-lab/Tai-e>
 
-墨菲安全专注于软件供应链安全，murphysec 是墨菲安全的 CLI 工具，用于在命令行检测指定目录代码的依赖安全问题，也可以基于 CLI 工具实现在 CI 流程的检测。
+Tai-e（太阿）是一个通用型Java程序分析框架，包含了开发程序分析技术所需的各类基础设施，并提供了可配置性高、功能强大的污点分析系统，用于检测各类隐私泄露、注入攻击等安全漏洞。
+
+### [OpenStar](detail/OpenStar.md)
+![Author](https://img.shields.io/badge/Author-starjun-orange)
+![Language](https://img.shields.io/badge/Language-JS/Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/starjun/openstar.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+
+<https://github.com/starjun/openstar>
+
+OpenStar 是一个基于 OpenResty 的高性能 Web 应用防火墙，支持复杂规则编写。提供了常规的 HTTP 字段规则配置，还提供了 IP 黑白名单、访问频次等配置，对于 CC 防护更提供的特定的规则算法，并且支持搭建集群进行防护。
 
 ### [GShark](detail/gshark.md)
 ![Author](https://img.shields.io/badge/Author-madneal-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/madneal/gshark.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.1.4-red)
+![Version](https://img.shields.io/badge/Version-V1.4.5-red)
 
 <https://github.com/madneal/gshark>
 
 一款开源敏感信息检测系统，可以监测包括 GitHub, GitLab(支持私有部署版本), Postman, searchcode 多个平台的敏感信息监测。
+
+### [AppScan](detail/AppScan.md)
+![Author](https://img.shields.io/badge/Author-TongchengOpenSource-orange)
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/TongchengOpenSource/AppScan.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V2.1.5-red)
+
+<https://github.com/TongchengOpenSource/AppScan>
+
+安全隐私卫士（AppScan）一款免费的企业级自动化App隐私合规检测工具
 
 ### [Juggler](detail/Juggler.md)
 ![Author](https://img.shields.io/badge/Author-C4o-orange)
@@ -159,6 +207,16 @@ veinmind-tools 是基于 veinmind-sdk 打造的一个容器安全工具集，目
 <https://github.com/C4o/Juggler>
 
 一个也许能骗到黑客的系统，可以作为WAF等防护体系的一环。
+
+### [vArmor](detail/vArmor.md)
+![Author](https://img.shields.io/badge/Author-bytedance-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/bytedance/vArmor.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.5.10-red)
+
+<https://github.com/bytedance/vArmor>
+
+vArmor 是一个云原生容器沙箱系统，它借助 Linux 的 LSM 技术（AppArmor & BPF）实现强制访问控制器（即 enforcer），从而对容器进行安全加固。它可以用于增强容器隔离性、减少内核攻击面、增加容器逃逸或横行移动攻击的难度与成本。vArmor 遵循 Kubernetes Operator 设计模式，用户可通过操作 CRD API 对特定的 Workload 进行加固。从而以更贴近业务的视角，实现对容器化微服务的沙箱加固。此外 vArmor 还包含多种内置加固策略，具备开箱即用的特性。
 
 ### [Hades](detail/Hades.md)
 ![Author](https://img.shields.io/badge/Author-theSecHunter-orange)
@@ -183,25 +241,25 @@ Hades 是一款支持 Windows/Linux 的内核级别数据采集主机入侵检�
 
 一款适用于以HW行动/红队/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。
 
-### [HaE](detail/HaE.md)
-![Author](https://img.shields.io/badge/Author-gh0stkey-orange)
-![Language](https://img.shields.io/badge/Language-Java-blue)
-![GitHub stars](https://img.shields.io/github/stars/gh0stkey/HaE.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.4.5-red)
-
-<https://github.com/gh0stkey/HaE>
-
-HaE是一款可以快速挖掘目标指纹和关键信息的Burp插件。
-
 ### [ENScanGo](detail/ENScanGo.md)
 ![Author](https://img.shields.io/badge/Author-wgpsec-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/wgpsec/ENScan_GO.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.0.9-red)
+![Version](https://img.shields.io/badge/Version-V1.0.0-red)
 
 <https://github.com/wgpsec/ENScan_GO>
 
 一款基于各大企业信息API的工具，解决在遇到的各种针对国内企业信息收集难题。一键收集控股公司ICP备案、APP、小程序、微信公众号等信息聚合导出。
+
+### [HaE](detail/HaE.md)
+![Author](https://img.shields.io/badge/Author-gh0stkey-orange)
+![Language](https://img.shields.io/badge/Language-Java-blue)
+![GitHub stars](https://img.shields.io/github/stars/gh0stkey/HaE.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V3.2.2-red)
+
+<https://github.com/gh0stkey/HaE>
+
+HaE是一款可以快速挖掘目标指纹和关键信息的Burp插件。
 
 ### [Kunyu](detail/Kunyu.md)
 ![Author](https://img.shields.io/badge/Author-风起-orange)
@@ -223,16 +281,6 @@ Kunyu(坤舆)，是一款基于ZoomEye API开发的信息收集工具，旨在�
 
 Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/ZoomEye/Shodan/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP/IP段或资产列表进行快速的指纹识别。
 
-### [scaninfo](detail/scaninfo.md)
-![Author](https://img.shields.io/badge/Author-华东360安服团队-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/redtoolskobe/scaninfo.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.1.0-red)
-
-<https://github.com/redtoolskobe/scaninfo>
-
-scaninfo 是一款开源、轻量、快速、跨平台的红队内外网打点扫描器。比较同类工具，其能够在 nmap 的扫描速度和 masscan 的准确度之间寻找一个较好的平衡点，能够快速进行端口扫描和服务识别，内置指纹识别用于 web 探测，可以用报告的方式整理扫描结果。
-
 ### [ksubdomain](detail/ksubdomain.md)
 ![Author](https://img.shields.io/badge/Author-w8ay-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
@@ -243,11 +291,21 @@ scaninfo 是一款开源、轻量、快速、跨平台的红队内外网打点�
 
 ksubdomain是一款基于无状态子域名爆破工具，支持在Windows/Linux/Mac上使用，它会很快的进行DNS爆破，在Mac和Windows上理论最大发包速度在30w/s,linux上为160w/s的速度。
 
+### [scaninfo](detail/scaninfo.md)
+![Author](https://img.shields.io/badge/Author-华东360安服团队-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/redtoolskobe/scaninfo.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.1.0-red)
+
+<https://github.com/redtoolskobe/scaninfo>
+
+scaninfo 是一款开源、轻量、快速、跨平台的红队内外网打点扫描器。比较同类工具，其能够在 nmap 的扫描速度和 masscan 的准确度之间寻找一个较好的平衡点，能够快速进行端口扫描和服务识别，内置指纹识别用于 web 探测，可以用报告的方式整理扫描结果。
+
 ### [ZoomEye-Python](detail/ZoomEye-Python.md)
 ![Author](https://img.shields.io/badge/Author-Knownsec404-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/knownsec/ZoomEye-python.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.1.1-red)
+![Version](https://img.shields.io/badge/Version-V2.2.0-red)
 
 <https://github.com/knownsec/ZoomEye-python>
 
@@ -286,6 +344,16 @@ ZoomEye-go 是一款基于 ZoomEye API 开发的 Golang 库，提供了 ZoomEye 
 
 
 ## 漏洞探测/vulnerability_assessment
+### [afrog](detail/afrog.md)
+![Author](https://img.shields.io/badge/Author-zan8in-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/zan8in/afrog.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V3.0.7-red)
+
+<https://github.com/zan8in/afrog>
+
+afrog 是一款性能卓越、快速稳定、PoC 可定制的漏洞扫描工具，PoC 包含 CVE、CNVD、默认口令、信息泄露、指纹识别、未授权访问、任意文件读取、命令执行等多种漏洞类型，帮助网络安全从业者快速验证并及时修复漏洞。
+
 ### [Kunpeng](detail/Kunpeng.md)
 ![Author](https://img.shields.io/badge/Author-opensec-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
@@ -295,16 +363,6 @@ ZoomEye-go 是一款基于 ZoomEye API 开发的 Golang 库，提供了 ZoomEye 
 <https://github.com/opensec-cn/kunpeng>
 
 Kunpeng是一个Golang编写的开源POC检测框架，集成了包括数据库、中间件、web组件、cms等等的漏洞POC，可检测弱口令、SQL注入、XSS、RCE等漏洞类型，以动态链接库的形式提供调用，通过此项目可快速开发漏洞检测类的系统，比攻击者快一步发现风险漏洞。
-
-### [afrog](detail/afrog.md)
-![Author](https://img.shields.io/badge/Author-zan8in-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/zan8in/afrog.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.2.1-red)
-
-<https://github.com/zan8in/afrog>
-
-afrog 是一款性能卓越、快速稳定、PoC 可定制的漏洞扫描工具，PoC 包含 CVE、CNVD、默认口令、信息泄露、指纹识别、未授权访问、任意文件读取、命令执行等多种漏洞类型，帮助网络安全从业者快速验证并及时修复漏洞。
 
 ### [Pocassist](detail/Pocassist.md)
 ![Author](https://img.shields.io/badge/Author-jweny-orange)
@@ -339,11 +397,31 @@ LSpider 一个为被动扫描器定制的前端爬虫
 
 
 ## 攻击与利用/penetration_test
+### [dperf](detail/dperf.md)
+![Author](https://img.shields.io/badge/Author-Benjamin-orange)
+![Language](https://img.shields.io/badge/Language-C-blue)
+![GitHub stars](https://img.shields.io/github/stars/baidu/dperf.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.7.0-red)
+
+<https://github.com/baidu/dperf>
+
+dperf 是一个100Gbps的网络性能与压力测试软件。国内多个知名安全厂商用dperf测试其防火墙。知名开源四层负载均衡DPVS在用dperf做性能测试，发布性能测试报告。
+
+### [CDK](detail/CDK.md)
+![Author](https://img.shields.io/badge/Author-cdkteam-orange)
+![Language](https://img.shields.io/badge/Language-Golang-blue)
+![GitHub stars](https://img.shields.io/github/stars/cdk-team/CDK.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.5.3-red)
+
+<https://github.com/cdk-team/CDK>
+
+CDK是一款为容器环境定制的渗透测试工具，在已攻陷的容器内部提供零依赖的常用命令及PoC/EXP。集成Docker/K8s场景特有的逃逸、横向移动、持久化利用方式，插件化管理。
+
 ### [pocsuite3](detail/pocsuite3.md)
 ![Author](https://img.shields.io/badge/Author-knownsec404-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/knownsec/pocsuite3.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.0.2-red)
+![Version](https://img.shields.io/badge/Version-V2.0.8-red)
 
 <https://github.com/knownsec/pocsuite3>
 
@@ -353,31 +431,11 @@ pocsuite3是由Knownsec 404团队开发的开源远程漏洞测试和概念验�
 ![Author](https://img.shields.io/badge/Author-FunnyWolf-orange)
 ![Language](https://img.shields.io/badge/Language-JS/Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/FunnyWolf/Viper.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.25-red)
+![Version](https://img.shields.io/badge/Version-V2.3.0-red)
 
 <https://github.com/FunnyWolf/Viper>
 
 VIPER是一款图形化内网渗透工具,将内网渗透过程中常用的战术及技术进行模块化及武器化。
-
-### [CDK](detail/CDK.md)
-![Author](https://img.shields.io/badge/Author-cdkteam-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/cdk-team/CDK.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.5.0-red)
-
-<https://github.com/cdk-team/CDK>
-
-CDK是一款为容器环境定制的渗透测试工具，在已攻陷的容器内部提供零依赖的常用命令及PoC/EXP。集成Docker/K8s场景特有的逃逸、横向移动、持久化利用方式，插件化管理。
-
-### [cf](detail/cf.md)
-![Author](https://img.shields.io/badge/Author-teamssix-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/teamssix/cf.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.4.4-red)
-
-<https://github.com/teamssix/cf>
-
-CF 是一个云环境利用框架，主要用来方便红队人员在获得云服务 Access Key 的后续工作。
 
 ### [MDUT](detail/MDUT.md)
 ![Author](https://img.shields.io/badge/Author-Ch1ngg-orange)
@@ -389,6 +447,16 @@ CF 是一个云环境利用框架，主要用来方便红队人员在获得云�
 
 MDUT 全称 Multiple Database Utilization Tools，旨在将常见的数据库利用手段集合在一个程序中，打破各种数据库利用工具需要各种环境导致使用相当不便的隔阂；MDUT 使用 Java 开发，支持跨平台使用。
 
+### [BurpCrypto](detail/BurpCrypto.md)
+![Author](https://img.shields.io/badge/Author-whwlsfb-orange)
+![Language](https://img.shields.io/badge/Language-Java-blue)
+![GitHub stars](https://img.shields.io/github/stars/whwlsfb/BurpCrypto.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.0.1-red)
+
+<https://github.com/whwlsfb/BurpCrypto>
+
+支持多种加密算法或直接执行JS代码的用于爆破前端加密的BurpSuite插件。
+
 ### [WMIHACKER](detail/WMIHACKER.md)
 ![Author](https://img.shields.io/badge/Author-rootclay-orange)
 ![Language](https://img.shields.io/badge/Language-VBScript-blue)
@@ -399,15 +467,15 @@ MDUT 全称 Multiple Database Utilization Tools，旨在将常见的数据库利
 
 WMIHACKER是一款免杀横向渗透远程命令执行工具，常见的WMIEXEC、PSEXEC执行命令是创建服务或调用Win32_Process.create执行命令，这些方式都已经被杀软100%拦截，通过改造出的WMIHACKER可免杀横向移动。并且在企业网络目前阻断445端口严重的情况下可以无需445端口进行横向移动，效率高且不易被检测。
 
-### [BurpCrypto](detail/BurpCrypto.md)
-![Author](https://img.shields.io/badge/Author-whwlsfb-orange)
+### [JYso](detail/JYso.md)
+![Author](https://img.shields.io/badge/Author-qi4L-orange)
 ![Language](https://img.shields.io/badge/Language-Java-blue)
-![GitHub stars](https://img.shields.io/github/stars/whwlsfb/BurpCrypto.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.0.1-red)
+![GitHub stars](https://img.shields.io/github/stars/qi4L/JYso.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.3.1-red)
 
-<https://github.com/whwlsfb/BurpCrypto>
+<https://github.com/qi4L/JYso>
 
-支持多种加密算法或直接执行JS代码的用于爆破前端加密的BurpSuite插件。
+JYso是一个可以用于 jndi 注入攻击和生成反序列化数据流的工具，既可以当 JNDIExploit 用也可以当作 ysoserial 使用。
 
 ### [MySQL-Fake-Server](detail/MySQL-Fake-Server.md)
 ![Author](https://img.shields.io/badge/Author-fnmsd-orange)
@@ -419,35 +487,15 @@ WMIHACKER是一款免杀横向渗透远程命令执行工具，常见的WMIEXEC�
 
 用于渗透测试过程中的假MySQL服务器，纯原生python3实现，不依赖其它包。
 
-### [geacon_pro](detail/geacon_pro.md)
-![Author](https://img.shields.io/badge/Author-H4de5-orange)
-![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/H4de5-7/geacon_pro.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.3.0-red)
-
-<https://github.com/H4de5-7/geacon_pro>
-
-跨平台重构了Cobaltstrike Beacon，适配了大部分Beacon的功能，行为对国内主流杀软免杀，支持4.1以上的版本。 A cross-platform CobaltStrike Beacon bypass anti-virus, supports 4.1+ version。
-
 ### [ysomap](detail/ysomap.md)
 ![Author](https://img.shields.io/badge/Author-wh1t3p1g-orange)
 ![Language](https://img.shields.io/badge/Language-Java-blue)
 ![GitHub stars](https://img.shields.io/github/stars/wh1t3p1g/ysomap.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.1.3-red)
+![Version](https://img.shields.io/badge/Version-V0.1.4-red)
 
 <https://github.com/wh1t3p1g/ysomap>
 
 Ysomap是一款适配于各类实际复杂环境的Java反序列化利用框架，可动态配置具备不同执行效果的Java反序列化利用链payload，以应对不同场景下的反序列化利用。
-
-### [Cloud-Bucket-Leak-Detection-Tools](detail/Cloud-Bucket-Leak-Detection-Tools.md)
-![Author](https://img.shields.io/badge/Author-UzJu-orange)
-![Language](https://img.shields.io/badge/Language-Python-blue)
-![GitHub stars](https://img.shields.io/github/stars/UzJu/Cloud-Bucket-Leak-Detection-Tools.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.4.0-red)
-
-<https://github.com/UzJu/Cloud-Bucket-Leak-Detection-Tools>
-
-Cloud-Bucket-Leak-Detection-Tools是一款针对云厂商存储桶扫描检测与利用的工具
 
 ### [DNSlog-GO](detail/DNSlog-GO.md)
 ![Author](https://img.shields.io/badge/Author-lanyi-orange)
@@ -459,11 +507,21 @@ Cloud-Bucket-Leak-Detection-Tools是一款针对云厂商存储桶扫描检测�
 
 DNSLog-GO 是一款golang编写的监控 DNS 解析记录的工具，自带WEB界面。单文件运行，无依赖。部署方便快捷。
 
+### [Cloud-Bucket-Leak-Detection-Tools](detail/Cloud-Bucket-Leak-Detection-Tools.md)
+![Author](https://img.shields.io/badge/Author-UzJu-orange)
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/UzJu/Cloud-Bucket-Leak-Detection-Tools.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.4.0-red)
+
+<https://github.com/UzJu/Cloud-Bucket-Leak-Detection-Tools>
+
+Cloud-Bucket-Leak-Detection-Tools是一款针对云厂商存储桶扫描检测与利用的工具
+
 ### [Antenna](detail/Antenna.md)
 ![Author](https://img.shields.io/badge/Author-wuba-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![GitHub stars](https://img.shields.io/github/stars/wuba/Antenna.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.2.1-red)
+![Version](https://img.shields.io/badge/Version-V1.3.5-red)
 
 <https://github.com/wuba/Antenna>
 
@@ -479,16 +537,6 @@ Antenna是58同城安全团队打造的一款辅助安全从业人员辅助验�
 
 Redis 4.x/Redis 5.x RCE利用脚本. 项目最初来源于 <https://github.com/n0b0dyCN/redis-rogue-server>
 
-### [MysqlT](detail/MysqlT.md)
-![Author](https://img.shields.io/badge/Author-BeichenDream-orange)
-![Language](https://img.shields.io/badge/Language-C%23-blue)
-![GitHub stars](https://img.shields.io/github/stars/BeichenDream/MysqlT.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.0-red)
-
-<https://github.com/BeichenDream/MysqlT>
-
-伪造Myslq服务端,并利用Mysql逻辑漏洞来获取客户端的任意文件反击攻击。
-
 ### [Cola-Dnslog](detail/Cola-Dnslog.md)
 ![Author](https://img.shields.io/badge/Author-AbelChe-orange)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
@@ -499,6 +547,16 @@ Redis 4.x/Redis 5.x RCE利用脚本. 项目最初来源于 <https://github.com/n
 
 Cola Dnslog 是一款更加强大的dnslog平台(无回显漏洞探测辅助平台)，支持dns http ldap rmi等协议，提供API调用方式便于与其他工具结合，支持钉钉机器人、Bark等提醒，并支持docker一键部署。
 
+### [MysqlT](detail/MysqlT.md)
+![Author](https://img.shields.io/badge/Author-BeichenDream-orange)
+![Language](https://img.shields.io/badge/Language-C%23-blue)
+![GitHub stars](https://img.shields.io/github/stars/BeichenDream/MysqlT.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+
+<https://github.com/BeichenDream/MysqlT>
+
+伪造Myslq服务端,并利用Mysql逻辑漏洞来获取客户端的任意文件反击攻击。
+
 
 
 ## 信息分析/information_analysis
@@ -506,7 +564,7 @@ Cola Dnslog 是一款更加强大的dnslog平台(无回显漏洞探测辅助平�
 ![Author](https://img.shields.io/badge/Author-moonD4rk-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/moonD4rk/HackBrowserData.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.4.4-red)
+![Version](https://img.shields.io/badge/Version-V0.4.5-red)
 
 <https://github.com/moonD4rk/HackBrowserData>
 
@@ -532,6 +590,26 @@ KunLun-M是一个完全开源的静态白盒扫描工具，支持PHP、JavaScrip
 
 frida-skeleton是基于frida的安卓hook框架，提供了很多frida自身不支持的功能，将hook安卓变成简单便捷，人人都会的事情。
 
+### [AppScan](detail/AppScan.md)
+![Author](https://img.shields.io/badge/Author-TongchengOpenSource-orange)
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![GitHub stars](https://img.shields.io/github/stars/TongchengOpenSource/AppScan.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V2.1.5-red)
+
+<https://github.com/TongchengOpenSource/AppScan>
+
+安全隐私卫士（AppScan）一款免费的企业级自动化App隐私合规检测工具
+
+### [Pillager](detail/Pillager.md)
+![Author](https://img.shields.io/badge/Author-qwqdanchun-orange)
+![Language](https://img.shields.io/badge/Language-C#-blue)
+![GitHub stars](https://img.shields.io/github/stars/qwqdanchun/Pillager.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.0.1-red)
+
+<https://github.com/qwqdanchun/Pillager>
+
+Pillager是一个适用于后渗透期间的信息收集工具，可以收集目标机器上敏感信息，方便下一步渗透工作的进行。
+
 ### [java-object-searcher](detail/java-object-searcher.md)
 ![Author](https://img.shields.io/badge/Author-c0ny1-orange)
 ![Language](https://img.shields.io/badge/Language-Java-blue)
@@ -541,6 +619,16 @@ frida-skeleton是基于frida的安卓hook框架，提供了很多frida自身不�
 <https://github.com/c0ny1/java-object-searcher>
 
 java内存对象搜索辅助工具，配合IDEA在Java应用运行时，对内存中的对象进行搜索。比如可以可以用挖掘request对象用于回显等场景。
+
+### [js-cookie-monitor-debugger-hook](detail/js-cookie-monitor-debugger-hook.md)
+![Author](https://img.shields.io/badge/Author-JSREI-orange)
+![Language](https://img.shields.io/badge/Language-JavaScript-blue)
+![GitHub stars](https://img.shields.io/github/stars/JSREI/js-cookie-monitor-debugger-hook.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.11.0-red)
+
+<https://github.com/JSREI/js-cookie-monitor-debugger-hook>
+
+js cookie逆向利器：js cookie变动监控可视化工具 & js cookie hook打条件断点
 
 ### [MySQLMonitor](detail/MySQLMonitor.md)
 ![Author](https://img.shields.io/badge/Author-TheKingOfDuck-orange)
@@ -569,7 +657,7 @@ CodeReviewTools是一个可以快速批量反编译jar包的工具，为审计Ja
 ![Author](https://img.shields.io/badge/Author-shadow1ng-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/shadow1ng/fscan.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.8.2-red)
+![Version](https://img.shields.io/badge/Version-V1.8.4-red)
 
 <https://github.com/shadow1ng/fscan>
 
@@ -589,7 +677,7 @@ CodeReviewTools是一个可以快速批量反编译jar包的工具，为审计Ja
 ![Author](https://img.shields.io/badge/Author-ph4ntonn-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
 ![GitHub stars](https://img.shields.io/github/stars/ph4ntonn/Stowaway.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V2.1-red)
+![Version](https://img.shields.io/badge/Version-V2.2-red)
 
 <https://github.com/ph4ntonn/Stowaway>
 
@@ -635,21 +723,21 @@ Platypus 是一个基于终端与 Web UI 交互式的反弹 Shell 会话管理�
 
 WMIHACKER是一款免杀横向渗透远程命令执行工具，常见的WMIEXEC、PSEXEC执行命令是创建服务或调用Win32_Process.create执行命令，这些方式都已经被杀软100%拦截，通过改造出的WMIHACKER可免杀横向移动。并且在企业网络目前阻断445端口严重的情况下可以无需445端口进行横向移动，效率高且不易被检测。
 
-### [geacon_pro](detail/geacon_pro.md)
-![Author](https://img.shields.io/badge/Author-H4de5-orange)
+### [rakshasa](detail/rakshasa.md)
+![Author](https://img.shields.io/badge/Author-Mob2003-orange)
 ![Language](https://img.shields.io/badge/Language-Golang-blue)
-![GitHub stars](https://img.shields.io/github/stars/H4de5-7/geacon_pro.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.3.0-red)
+![GitHub stars](https://img.shields.io/github/stars/Mob2003/rakshasa.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.2.3-red)
 
-<https://github.com/H4de5-7/geacon_pro>
+<https://github.com/Mob2003/rakshasa>
 
-跨平台重构了Cobaltstrike Beacon，适配了大部分Beacon的功能，行为对国内主流杀软免杀，支持4.1以上的版本。 A cross-platform CobaltStrike Beacon bypass anti-virus, supports 4.1+ version。
+rakshasa是一个使用Go语言编写的强大多级代理工具，专为实现多级代理，内网穿透而设计。它可以在节点群里面任意两个节点之间转发TCP请求和响应，同时支持socks5代理，http代理，并且可以引入外部http、socks5代理池，自动切换请求IP。
 
 ### [As-Exploits](detail/As-Exploits.md)
 ![Author](https://img.shields.io/badge/Author-yzddmr6-orange)
 ![Language](https://img.shields.io/badge/Language-JavaScript-blue)
 ![GitHub stars](https://img.shields.io/github/stars/yzddmr6/As-Exploits.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V1.0.0-red)
+![Version](https://img.shields.io/badge/Version-V1.5.0-red)
 
 <https://github.com/yzddmr6/As-Exploits>
 
@@ -668,16 +756,6 @@ PortForward 是使用 Golang 进行开发的端口转发工具，解决在某些
 
 
 ## 其他/others
-### [BinAbsInspector](detail/BinAbsInspector.md)
-![Author](https://img.shields.io/badge/Author-KeenSecurityLab-orange)
-![Language](https://img.shields.io/badge/Language-Java-blue)
-![GitHub stars](https://img.shields.io/github/stars/KeenSecurityLab/BinAbsInspector.svg?style=flat&logo=github)
-![Version](https://img.shields.io/badge/Version-V0.1-red)
-
-<https://github.com/KeenSecurityLab/BinAbsInspector>
-
-BinAbsInspector(Binary Abstract Inspector)是一款用于自动化逆向工程和扫描二进制文件漏洞的静态分析器，是 Keenlab 孵化的长期研究项目。基于 Ghidra 的支持下的抽象解释，适用于 Ghidra 的 Pcode 而非汇编。目前支持 x86、x64、armv7 和 aarch64 的二进制文件。
-
 ### [f8x](detail/f8x.md)
 ![Author](https://img.shields.io/badge/Author-ffffffff0x-orange)
 ![Language](https://img.shields.io/badge/Language-Bash-blue)
@@ -687,6 +765,16 @@ BinAbsInspector(Binary Abstract Inspector)是一款用于自动化逆向工程�
 <https://github.com/ffffffff0x/f8x>
 
 一款红/蓝队环境自动化部署工具,支持多种场景,渗透,开发,代理环境,服务可选项等。
+
+### [BinAbsInspector](detail/BinAbsInspector.md)
+![Author](https://img.shields.io/badge/Author-KeenSecurityLab-orange)
+![Language](https://img.shields.io/badge/Language-Java-blue)
+![GitHub stars](https://img.shields.io/github/stars/KeenSecurityLab/BinAbsInspector.svg?style=flat&logo=github)
+![Version](https://img.shields.io/badge/Version-V0.1-red)
+
+<https://github.com/KeenSecurityLab/BinAbsInspector>
+
+BinAbsInspector(Binary Abstract Inspector)是一款用于自动化逆向工程和扫描二进制文件漏洞的静态分析器，是 Keenlab 孵化的长期研究项目。基于 Ghidra 的支持下的抽象解释，适用于 Ghidra 的 Pcode 而非汇编。目前支持 x86、x64、armv7 和 aarch64 的二进制文件。
 
 ### [passive-scan-client](detail/passive-scan-client.md)
 ![Author](https://img.shields.io/badge/Author-c0ny1-orange)
